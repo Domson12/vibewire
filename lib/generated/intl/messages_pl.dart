@@ -23,9 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "confirm_password":
-            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+            MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("pole nie może być puste"),
+        "have_account": MessageLookupByLibrary.simpleMessage("Masz już konto?"),
         "invalid_email":
             MessageLookupByLibrary.simpleMessage("wpisz poprawny email"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
@@ -34,9 +35,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
-        "name": MessageLookupByLibrary.simpleMessage("Name"),
-        "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "register": MessageLookupByLibrary.simpleMessage("Register"),
-        "surname": MessageLookupByLibrary.simpleMessage("Surname")
+        "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
+        "name": MessageLookupByLibrary.simpleMessage("Imię"),
+        "password": MessageLookupByLibrary.simpleMessage("Hasło"),
+        "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
+        "surname": MessageLookupByLibrary.simpleMessage("Nazwisko")
       };
 }

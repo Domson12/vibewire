@@ -7,6 +7,7 @@ import 'package:vibewire/core/theme/app_colors.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:vibewire/core/theme/vibe_theme_Extension.dart';
 import '../../../core/common/widget/auth_logo.dart';
+import '../../../core/common/widget/auth_navigation_row.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
 import 'cubit/register_cubit.dart';
@@ -47,7 +48,9 @@ class _RegisterPageState extends State<RegisterPage> {
               return Form(
                 key: _formKey,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -63,19 +66,19 @@ class _RegisterPageState extends State<RegisterPage> {
                           hintText: S.of(context).name,
                           suffixIcon: const Icon(Ionicons.person),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 30),
                         AuthFormField(
                           controller: _surname,
                           hintText: S.of(context).surname,
                           suffixIcon: const Icon(Ionicons.person),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 30),
                         AuthFormField(
                           controller: _email,
                           hintText: 'Email',
                           suffixIcon: const Icon(Ionicons.mail),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 30),
                         AuthFormField(
                           controller: _password,
                           hintText: S.of(context).password,
@@ -91,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 : const Icon(Ionicons.eye),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 30),
                         AuthFormField(
                           controller: _confirmPassword,
                           hintText: S.of(context).confirm_password,
@@ -106,6 +109,14 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ? const Icon(Ionicons.eye_off)
                                 : const Icon(Ionicons.eye),
                           ),
+                        ),
+                        const SizedBox(height: 10),
+                        AuthNavigationRow(
+                          leftText: S.of(context).have_account,
+                          rightText: S.of(context).login,
+                          onTap: () {
+                           //TODO: Navigate to Login Page
+                          },
                         ),
                         const SizedBox(height: 40),
                         SizedBox(
@@ -127,6 +138,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                           ),
                         ),
+                        //TODO: Add Social Login Buttons
                       ],
                     ),
                   ),

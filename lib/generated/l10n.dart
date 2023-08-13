@@ -100,51 +100,71 @@ class S {
     );
   }
 
-  /// `Register`
+  /// `Zarejestruj się`
   String get register {
     return Intl.message(
-      'Register',
+      'Zarejestruj się',
       name: 'register',
       desc: '',
       args: [],
     );
   }
 
-  /// `Confirm Password`
+  /// `Zaloguj się`
+  String get login {
+    return Intl.message(
+      'Zaloguj się',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Potwierdź hasło`
   String get confirm_password {
     return Intl.message(
-      'Confirm Password',
+      'Potwierdź hasło',
       name: 'confirm_password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Password`
+  /// `Hasło`
   String get password {
     return Intl.message(
-      'Password',
+      'Hasło',
       name: 'password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Surname`
+  /// `Nazwisko`
   String get surname {
     return Intl.message(
-      'Surname',
+      'Nazwisko',
       name: 'surname',
       desc: '',
       args: [],
     );
   }
 
-  /// `Name`
+  /// `Imię`
   String get name {
     return Intl.message(
-      'Name',
+      'Imię',
       name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Masz już konto?`
+  String get have_account {
+    return Intl.message(
+      'Masz już konto?',
+      name: 'have_account',
       desc: '',
       args: [],
     );

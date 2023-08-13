@@ -26,12 +26,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("Field can\'t be empty"),
+        "have_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
             "Name must be at least 3 characters"),
         "invalid_password": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter and one number"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Invalid Phone Number, must be 9 digits (Polish number))"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),

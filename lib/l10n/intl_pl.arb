@@ -5,9 +5,11 @@
   "invalid_password": "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę",
   "invalid_name": "Imię musi mieć co najmniej 3 znaki",
   "invalid_phone": "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)",
-  "register": "Register",
-  "confirm_password": "Confirm Password",
-  "password": "Password",
-  "surname": "Surname",
-  "name": "Name"
+  "register": "Zarejestruj się",
+  "login": "Zaloguj się",
+  "confirm_password": "Potwierdź hasło",
+  "password": "Hasło",
+  "surname": "Nazwisko",
+  "name": "Imię",
+  "have_account": "Masz już konto?"
 }
