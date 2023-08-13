@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "empty_field": "Field can't be empty",
+  "valid_email": "Please enter a valid email address",
+  "invalid_password": "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter and one number",
+  "invalid_name": "Name must be at least 3 characters",
+  "invalid_phone": "Invalid Phone Number, must be 9 digits (Polish number))",
+  "register": "Register",
+  "confirm_password": "Confirm Password",
+  "password": "Password",
+  "surname": "Surname",
+  "name": "Name"
+}

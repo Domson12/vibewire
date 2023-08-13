@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a pl locale. All the
+// This is a library that provides messages for a en locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,22 +18,20 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'pl';
+  String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "empty_field":
-            MessageLookupByLibrary.simpleMessage("pole nie może być puste"),
-        "invalid_email":
-            MessageLookupByLibrary.simpleMessage("wpisz poprawny email"),
+            MessageLookupByLibrary.simpleMessage("Field can\'t be empty"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
-            "Imię musi mieć co najmniej 3 znaki"),
+            "Name must be at least 3 characters"),
         "invalid_password": MessageLookupByLibrary.simpleMessage(
-            "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
+            "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter and one number"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
-            "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
+            "Invalid Phone Number, must be 9 digits (Polish number))"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),

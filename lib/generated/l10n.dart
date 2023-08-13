@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `pole nie może być puste`
+  String get empty_field {
+    return Intl.message(
+      'pole nie może być puste',
+      name: 'empty_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `wpisz poprawny email`
+  String get invalid_email {
+    return Intl.message(
+      'wpisz poprawny email',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę`
+  String get invalid_password {
+    return Intl.message(
+      'hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę',
+      name: 'invalid_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Imię musi mieć co najmniej 3 znaki`
+  String get invalid_name {
+    return Intl.message(
+      'Imię musi mieć co najmniej 3 znaki',
+      name: 'invalid_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)`
+  String get invalid_phone {
+    return Intl.message(
+      'Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)',
+      name: 'invalid_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Surname`
+  String get surname {
+    return Intl.message(
+      'Surname',
+      name: 'surname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +157,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'pl'),
+      Locale.fromSubtags(languageCode: 'en'),
     ];
   }
 

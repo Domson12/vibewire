@@ -44,6 +44,7 @@ dependencies:
   rxdart: ^0.27.7
   pretty_dio_logger: ^1.3.1
   flow_builder: ^0.0.9
+  ionicons: ^0.2.2
 
 
 flutter_native_splash:
@@ -51,12 +52,13 @@ flutter_native_splash:
   ios: true
   web: false
 
-  color: "#43BE8D"
-  image: "assets/images/kitty.png"
+  color: "#2196F3"
+  image: "assets/images/splash_icon.png"
+
 
   android_12:
-    color: "#43BE8D"
-    image: "assets/images/kitty.png"
+    color: "#2196F3"
+    image: "assets/images/splash_icon.png"
 
 dev_dependencies:
   flutter_test:

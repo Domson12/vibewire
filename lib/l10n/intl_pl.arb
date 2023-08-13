@@ -1,1 +1,13 @@
-{}
+{
+  "@@locale": "pl",
+  "empty_field": "pole nie może być puste",
+  "invalid_email": "wpisz poprawny email",
+  "invalid_password": "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę",
+  "invalid_name": "Imię musi mieć co najmniej 3 znaki",
+  "invalid_phone": "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)",
+  "register": "Register",
+  "confirm_password": "Confirm Password",
+  "password": "Password",
+  "surname": "Surname",
+  "name": "Name"
+}
