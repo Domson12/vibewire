@@ -8,7 +8,6 @@ This platform aims to provide users with a vibrant and creative space to connect
 
 ## Table of Contents
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -32,18 +31,6 @@ Vibewire offers a range of features designed to enhance user engagement and crea
 - Monetization options for users to earn from their content.
 - Augmented Reality (AR) filters for interactive visual experiences.
 
-## Installation
-
-1. Clone this repository to your local machine using:
-
-### git clone https://github.com/your-username/vibewire.git
-
-
-2. Install the required dependencies:
-## npm install
-
-
-3. Configure environment variables for database connections, API keys, etc.
 
 ## Usage
 
