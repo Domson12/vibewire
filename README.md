@@ -10,6 +10,7 @@ This platform aims to provide users with a vibrant and creative space to connect
 - [Features](#features)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Screenshots](#screenshots)
 - [License](#license)
 
 ## Features
@@ -51,6 +52,10 @@ We welcome contributions from the open-source community! To contribute to Vibewi
 3. Make your changes and ensure all tests pass.
 4. Commit your changes and push them to your fork.
 5. Submit a pull request to the main repository's `main` branch.
+
+## Screenshots
+
+### I will add screens when i will finish figma design
 
 ## License
 
