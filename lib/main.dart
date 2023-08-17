@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+
 import 'core/navigation/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/utils/injection_container.dart';
