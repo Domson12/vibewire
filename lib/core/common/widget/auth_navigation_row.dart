@@ -25,46 +25,46 @@ class AuthNavigationRow extends StatelessWidget {
           child: Text(
             leftText,
             style: Theme.of(context).xTextTheme.h2.copyWith(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.white,
-                ),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColors.white,
+            ),
+            textAlign: TextAlign.left,
           ),
         ),
-        const SizedBox(width: 40),
-        Expanded(
-          child: Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Material(
-                type: MaterialType.transparency,
-                child: InkWell(
-                  onTap: onTap,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 5, 10, 3),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          rightText,
-                          style: Theme.of(context).xTextTheme.h2.copyWith(
-                                color: AppColors.white,
-                              ),
-                        ),
-                        const SizedBox(width: 8),
-                        const Icon(
-                          Ionicons.arrow_forward,
-                          color: AppColors.white,
-                        ),
-                      ],
+        Container(
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(6),
+          ),
+          child: Material(
+            type: MaterialType.transparency,
+            child: InkWell(
+              onTap: onTap,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 5, 0, 3),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      rightText,
+                      style: Theme.of(context).xTextTheme.h2.copyWith(
+                        color: AppColors.white,
+                      ),
                     ),
-                  ),
+                    const SizedBox(width: 8),
+                    const Icon(
+                      Ionicons.arrow_forward,
+                      color: AppColors.white,
+                    ),
+                  ],
                 ),
-              )),
+              ),
+            ),
+          ),
         ),
       ],
     );
   }
 }
+

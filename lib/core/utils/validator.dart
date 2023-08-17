@@ -18,10 +18,33 @@ class Validators {
   static String? validatePassword(String? value, BuildContext context) {
     if (value == null || value.isEmpty) {
       return S.of(context).empty_field;
+    } else if (value.length < 6) {
+      return S.of(context).password_too_short;
+    } else if (!value.contains(
+      RegExp(r'[0-9]'),
+    )) {
+      return S.of(context).add_numbers;
+    } else if (!value.contains(
+      RegExp(r'[A-Z]'),
+    )) {
+      return S.of(context).add_capital_letters;
+    } else if (!value.contains(
+      RegExp(r'[a-z]'),
+    )) {
+      return S.of(context).add_lowercase;
+    } else if (!value.contains(
+      RegExp(r'[!@#$%^&*(),.?":{}|<>]'),
+    )) {
+      return S.of(context).add_special_char;
     }
-    //regx for password validation
-    if (!RegExp(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$").hasMatch(value)) {
-      return S.of(context).invalid_password;
+    return null;
+  }
+  
+  static String? validateConfirmPassword(String? value, BuildContext context, String password) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).empty_field;
+    } else if (value != password) {
+      return S.of(context).password_not_the_same;
     }
     return null;
   }

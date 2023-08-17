@@ -22,23 +22,39 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_capital_letters":
+            MessageLookupByLibrary.simpleMessage("Dodaj duze litery"),
+        "add_lowercase":
+            MessageLookupByLibrary.simpleMessage("Dodaj małe litery"),
+        "add_numbers": MessageLookupByLibrary.simpleMessage("Dodaj cyfry"),
+        "add_special_char":
+            MessageLookupByLibrary.simpleMessage("Dodaj znaki specjalne"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
-            MessageLookupByLibrary.simpleMessage("pole nie może być puste"),
+            MessageLookupByLibrary.simpleMessage("Pole nie może być puste"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Zapomniałeś hasła?"),
         "have_account": MessageLookupByLibrary.simpleMessage("Masz już konto?"),
         "invalid_email":
-            MessageLookupByLibrary.simpleMessage("wpisz poprawny email"),
+            MessageLookupByLibrary.simpleMessage("Wpisz poprawny email"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
             "Imię musi mieć co najmniej 3 znaki"),
         "invalid_password": MessageLookupByLibrary.simpleMessage(
-            "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
+            "Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
         "name": MessageLookupByLibrary.simpleMessage("Imię"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
+        "password_not_the_same":
+            MessageLookupByLibrary.simpleMessage("Hasła nie są takie same"),
+        "password_too_short":
+            MessageLookupByLibrary.simpleMessage("Hasło jest za krótkie"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
+        "reset_password":
+            MessageLookupByLibrary.simpleMessage("Zresetuj hasło"),
         "surname": MessageLookupByLibrary.simpleMessage("Nazwisko")
       };
 }

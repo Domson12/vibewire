@@ -42,7 +42,7 @@ class AuthFormField extends StatelessWidget {
   errorStyle: Theme.of(context).xTextTheme.h2.copyWith(
   fontSize: 15,
   fontWeight: FontWeight.bold,
-  color: AppColors.black,
+  color: AppColors.white,
   height: 1.5,
   ),
   hintText: hintText,

@@ -50,30 +50,30 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `pole nie może być puste`
+  /// `Pole nie może być puste`
   String get empty_field {
     return Intl.message(
-      'pole nie może być puste',
+      'Pole nie może być puste',
       name: 'empty_field',
       desc: '',
       args: [],
     );
   }
 
-  /// `wpisz poprawny email`
+  /// `Wpisz poprawny email`
   String get invalid_email {
     return Intl.message(
-      'wpisz poprawny email',
+      'Wpisz poprawny email',
       name: 'invalid_email',
       desc: '',
       args: [],
     );
   }
 
-  /// `hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę`
+  /// `Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę`
   String get invalid_password {
     return Intl.message(
-      'hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę',
+      'Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę',
       name: 'invalid_password',
       desc: '',
       args: [],
@@ -165,6 +165,96 @@ class S {
     return Intl.message(
       'Masz już konto?',
       name: 'have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zapomniałeś hasła?`
+  String get forgot_password {
+    return Intl.message(
+      'Zapomniałeś hasła?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zresetuj hasło`
+  String get reset_password {
+    return Intl.message(
+      'Zresetuj hasło',
+      name: 'reset_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hasło jest za krótkie`
+  String get password_too_short {
+    return Intl.message(
+      'Hasło jest za krótkie',
+      name: 'password_too_short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj cyfry`
+  String get add_numbers {
+    return Intl.message(
+      'Dodaj cyfry',
+      name: 'add_numbers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj duze litery`
+  String get add_capital_letters {
+    return Intl.message(
+      'Dodaj duze litery',
+      name: 'add_capital_letters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj małe litery`
+  String get add_lowercase {
+    return Intl.message(
+      'Dodaj małe litery',
+      name: 'add_lowercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj znaki specjalne`
+  String get add_special_char {
+    return Intl.message(
+      'Dodaj znaki specjalne',
+      name: 'add_special_char',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hasła nie są takie same`
+  String get password_not_the_same {
+    return Intl.message(
+      'Hasła nie są takie same',
+      name: 'password_not_the_same',
       desc: '',
       args: [],
     );

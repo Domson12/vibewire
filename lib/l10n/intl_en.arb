@@ -11,5 +11,14 @@
   "surname": "Surname",
   "name": "Name",
   "have_account": "Already have an account?",
-  "login": "Login"
+  "login": "Login",
+  "email": "Email",
+  "forgot_password": "Forgot Password?",
+  "reset_password": "Reset Password",
+  "password_too_short": "Password is too short",
+  "add_numbers": "Add numbers",
+  "add_capital_letters": "Add capital letters",
+  "add_lowercase": "Add lowercase letters",
+  "add_special_char": "Add special characters",
+  "password_not_the_same": "Passwords are not the same"
 }

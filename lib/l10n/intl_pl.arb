@@ -1,8 +1,8 @@
 {
   "@@locale": "pl",
-  "empty_field": "pole nie może być puste",
-  "invalid_email": "wpisz poprawny email",
-  "invalid_password": "hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę",
+  "empty_field": "Pole nie może być puste",
+  "invalid_email": "Wpisz poprawny email",
+  "invalid_password": "Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę",
   "invalid_name": "Imię musi mieć co najmniej 3 znaki",
   "invalid_phone": "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)",
   "register": "Zarejestruj się",
@@ -11,5 +11,14 @@
   "password": "Hasło",
   "surname": "Nazwisko",
   "name": "Imię",
-  "have_account": "Masz już konto?"
+  "have_account": "Masz już konto?",
+  "email": "Email",
+  "forgot_password": "Zapomniałeś hasła?",
+  "reset_password": "Zresetuj hasło",
+  "password_too_short": "Hasło jest za krótkie",
+  "add_numbers": "Dodaj cyfry",
+  "add_capital_letters": "Dodaj duze litery",
+  "add_lowercase": "Dodaj małe litery",
+  "add_special_char": "Dodaj znaki specjalne",
+  "password_not_the_same": "Hasła nie są takie same"
 }

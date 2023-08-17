@@ -22,10 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_capital_letters":
+            MessageLookupByLibrary.simpleMessage("Add capital letters"),
+        "add_lowercase":
+            MessageLookupByLibrary.simpleMessage("Add lowercase letters"),
+        "add_numbers": MessageLookupByLibrary.simpleMessage("Add numbers"),
+        "add_special_char":
+            MessageLookupByLibrary.simpleMessage("Add special characters"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("Field can\'t be empty"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "have_account":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
@@ -37,7 +47,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_not_the_same":
+            MessageLookupByLibrary.simpleMessage("Passwords are not the same"),
+        "password_too_short":
+            MessageLookupByLibrary.simpleMessage("Password is too short"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "reset_password":
+            MessageLookupByLibrary.simpleMessage("Reset Password"),
         "surname": MessageLookupByLibrary.simpleMessage("Surname")
       };
 }
