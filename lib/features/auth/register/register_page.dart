@@ -148,10 +148,10 @@ class _RegisterPageState extends State<RegisterPage> {
                               if (_formKey.currentState?.validate() == true) {
                                 try {
                                   context.read<AuthCubit>().register(
-                                        _email.text,
-                                        _password.text,
-                                        _name.text,
-                                        _lastName.text,
+                                        email: _email.text,
+                                        password: _password.text,
+                                        name: _name.text,
+                                        lastName: _lastName.text,
                                       );
                                 } on FirebaseAuthException catch (e) {
                                   ScaffoldMessenger.of(context).showSnackBar(

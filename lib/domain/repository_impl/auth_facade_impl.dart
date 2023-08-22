@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:vibewire/domain/model/register_model.dart';
-import 'package:vibewire/domain/repository/auth_facade.dart';
+
+import '../model/register_model.dart';
+import '../repository/auth_facade.dart';
 
 @lazySingleton
 class AuthFacadeImpl implements IAuthFacade {
@@ -10,6 +11,7 @@ class AuthFacadeImpl implements IAuthFacade {
 
   final FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
+
 
   @override
   Future<RegisterModel?> getUser() {

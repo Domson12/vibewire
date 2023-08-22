@@ -24,7 +24,7 @@ abstract class _$AppRouter extends RootStackRouter {
     AuthWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const AuthWrapperPage()),
+        child: const AuthWrapperPage(),
       );
     },
     DashboardRoute.name: (routeData) {
@@ -42,7 +42,7 @@ abstract class _$AppRouter extends RootStackRouter {
     MainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MainPage(),
+        child: WrappedRoute(child: const MainPage()),
       );
     },
     RegisterRoute.name: (routeData) {

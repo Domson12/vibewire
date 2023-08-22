@@ -1,16 +1,18 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vibewire/core/common/widget/app_elevated_button.dart';
-import 'package:vibewire/core/common/widget/auth_form_field.dart';
-import 'package:vibewire/core/common/widget/auth_logo.dart';
-import 'package:vibewire/core/theme/vibe_theme_Extension.dart';
-import 'package:vibewire/features/auth/login/cubit/login_cubit.dart';
 
+import '../../../core/common/widget/app_elevated_button.dart';
+import '../../../core/common/widget/auth_form_field.dart';
+import '../../../core/common/widget/auth_logo.dart';
+import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/common/widget/auth_navigation_row.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/injection_container.dart';
+import '../../../core/utils/validator.dart';
 import '../../../generated/l10n.dart';
+import '../cubit/auth_cubit.dart';
 
 @RoutePage()
 class LoginPage extends StatefulWidget with AutoRouteWrapper {
@@ -22,7 +24,7 @@ class LoginPage extends StatefulWidget with AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) => sl<LoginCubit>(),
+      create: (_) => sl<AuthCubit>(),
       child: this,
     );
   }
@@ -39,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: AppColors.blue,
       body: Center(
         child: SafeArea(
-          child: BlocBuilder<LoginCubit, LoginState>(
+          child: BlocBuilder<AuthCubit, AuthState>(
             builder: (context, state) {
               return Form(
                 key: _formKey,
@@ -56,11 +58,19 @@ class _LoginPageState extends State<LoginPage> {
                       AuthFormField(
                         controller: _email,
                         hintText: S.of(context).email,
+                        validator: (value) => Validators.validateEmail(
+                          value,
+                          context,
+                        ),
                       ),
                       const SizedBox(height: 20),
                       AuthFormField(
                         controller: _password,
                         hintText: S.of(context).password,
+                        validator: (value) => Validators.validatePassword(
+                          value,
+                          context,
+                        ),
                       ),
                       const SizedBox(height: 20),
                       AuthNavigationRow(
@@ -74,10 +84,25 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         width: double.maxFinite,
                         child: AppElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (_formKey.currentState?.validate() == true) {
+                              try {
+                                context.read<AuthCubit>().signIn(
+                                      email: _email.text,
+                                      password: _password.text,
+                                    );
+                              } on FirebaseAuthException catch (e) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(e.message ?? ''),
+                                  ),
+                                );
+                              }
+                            }
+                          },
                           foregroundColor: AppColors.black,
                           backgroundColor: AppColors.white,
-                          child: state.isPasswordVisible
+                          child: state.isLoading
                               ? const CircularProgressIndicator()
                               : Text(
                                   S.of(context).login,
