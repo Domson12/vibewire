@@ -26,7 +26,7 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-  void register({
+  Future<void> register({
     required String email,
     required String password,
     required String name,
@@ -42,23 +42,41 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(state.copyWith(isLoading: false));
     } on FirebaseAuthException catch (e) {
-      emit(state.copyWith(isLoading: false, errorMessage: e.message));
+      emit(
+        state.copyWith(
+          isLoading: false,
+          errorMessage: e.message,
+          showErrorMessage: true,
+        ),
+      );
     }
   }
 
-  void signIn({
-    required String email,
-    required String password,
-  }) async {
+  Future<void> signIn({required String email, required String password}) async {
     emit(state.copyWith(isLoading: true));
     try {
-      await _authFacadeImpl.signIn(
-        email: email,
-        password: password,
-      );
+      await _authFacadeImpl.signIn(email: email, password: password);
       emit(state.copyWith(isLoading: false));
-    } on FirebaseAuthException catch (e) {
-      emit(state.copyWith(isLoading: false, errorMessage: e.message));
+    } catch (e) {
+      emit(state.copyWith(
+        isLoading: false,
+        errorMessage: e.toString(),
+        showErrorMessage: true,
+      ));
+    }
+  }
+
+  Future<void> googleSignIn() async {
+    emit(state.copyWith(isLoading: true));
+    try {
+      await _authFacadeImpl.googleSignIn();
+      emit(state.copyWith(isLoading: false));
+    } catch (e) {
+      emit(state.copyWith(
+        isLoading: false,
+        errorMessage: e.toString(),
+        showErrorMessage: true,
+      ));
     }
   }
 
@@ -67,8 +85,8 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       await _authFacadeImpl.logOut();
       emit(state.copyWith(isLoading: false));
-    } catch (e) {
-      emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
+    } on FirebaseAuthException catch (e) {
+      emit(state.copyWith(isLoading: false, errorMessage: e.message));
     }
   }
 }

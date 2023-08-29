@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 
 class AppColors {
   static const primary = Color(0xFF1E88E5);
@@ -40,4 +40,11 @@ class AppColors {
   static const pinkLight = Color(0xFFF8BBD0);
   static const pinkDark = Color(0xFFC2185B);
   static const indigo = Color(0xFF3F51B5);
+  static LinearGradient rgbBackground = const LinearGradient(
+    colors: [Color(0xFFC40AAE), Color(0xFF38B384)],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    stops: [0.0, 1.0],
+    transform: GradientRotation(309 * (3.14159265 / 180.0)),
+  );
 }

@@ -1,7 +1,7 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:go_router/go_router.dart';
 
 
-@RoutePage()
-class AuthPage extends AutoRouter {
-  const AuthPage({super.key});
+
+class AuthPage extends GoRouter {
+  AuthPage({required super.routes});
 }

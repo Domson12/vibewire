@@ -259,6 +259,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Login Successful`
+  String get login_success {
+    return Intl.message(
+      'Login Successful',
+      name: 'login_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `lub {text} przez`
+  String auth_social_text(Object text) {
+    return Intl.message(
+      'lub $text przez',
+      name: 'auth_social_text',
+      desc: '',
+      args: [text],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

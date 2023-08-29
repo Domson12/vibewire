@@ -10,6 +10,8 @@ abstract class IAuthFacade {
     required String lastName,
   });
 
+  Future<void> googleSignIn();
+
   Future<RegisterModel?> getUser();
 
   Future<void> logOut();

@@ -20,5 +20,12 @@
   "add_capital_letters": "Dodaj duze litery",
   "add_lowercase": "Dodaj małe litery",
   "add_special_char": "Dodaj znaki specjalne",
-  "password_not_the_same": "Hasła nie są takie same"
+  "password_not_the_same": "Hasła nie są takie same",
+  "login_success": "Login Successful",
+  "auth_social_text": "lub {text} przez",
+  "@auth_social_text": {
+    "placeholders": {
+      "text": {}
+    }
+  }
 }

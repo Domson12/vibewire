@@ -7,6 +7,7 @@ class AuthState with _$AuthState {
     @Default(false) bool isConfirmPasswordVisible,
     @Default(false) bool isLoggedIn,
     @Default('') String? errorMessage,
+    @Default(false) bool showErrorMessage,
     @Default(false) bool isLoading,
   }) = _AuthState;
 }

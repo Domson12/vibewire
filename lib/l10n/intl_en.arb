@@ -20,5 +20,11 @@
   "add_capital_letters": "Add capital letters",
   "add_lowercase": "Add lowercase letters",
   "add_special_char": "Add special characters",
-  "password_not_the_same": "Passwords are not the same"
+  "password_not_the_same": "Passwords are not the same",
+  "auth_social_text": "lub {text} przez",
+  "@auth_social_text": {
+    "placeholders": {
+      "text": {}
+    }
+  }
 }

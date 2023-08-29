@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pl';
 
+  static String m0(text) => "lub ${text} przez";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_capital_letters":
@@ -29,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_numbers": MessageLookupByLibrary.simpleMessage("Dodaj cyfry"),
         "add_special_char":
             MessageLookupByLibrary.simpleMessage("Dodaj znaki specjalne"),
+        "auth_social_text": m0,
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -46,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
+        "login_success":
+            MessageLookupByLibrary.simpleMessage("Login Successful"),
         "name": MessageLookupByLibrary.simpleMessage("Imię"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "password_not_the_same":
