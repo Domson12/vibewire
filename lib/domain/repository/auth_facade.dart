@@ -1,4 +1,4 @@
-import 'package:vibewire/domain/model/register_model.dart';
+import '../model/register_model.dart';
 
 abstract class IAuthFacade {
   Future<void> signIn({required String email, required String password});

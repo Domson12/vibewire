@@ -15,7 +15,11 @@ class AuthCubit extends Cubit<AuthState> {
   final AuthFacadeImpl _authFacadeImpl;
 
   void togglePasswordVisibility() {
-    emit(state.copyWith(isPasswordVisible: !state.isPasswordVisible));
+    emit(
+      state.copyWith(
+        isPasswordVisible: !state.isPasswordVisible,
+      ),
+    );
   }
 
   void toggleConfirmPasswordVisibility() {
@@ -78,6 +82,10 @@ class AuthCubit extends Cubit<AuthState> {
         showErrorMessage: true,
       ));
     }
+  }
+
+  Future<void> facebookSignIn() async{
+    //TODO: Facebook Sign In
   }
 
   void logout() async {

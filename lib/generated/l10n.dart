@@ -279,6 +279,16 @@ class S {
       args: [text],
     );
   }
+
+  /// `Wyloguj się`
+  String get logout {
+    return Intl.message(
+      'Wyloguj się',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

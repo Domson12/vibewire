@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
         "login_success":
             MessageLookupByLibrary.simpleMessage("Login Successful"),
+        "logout": MessageLookupByLibrary.simpleMessage("Wyloguj się"),
         "name": MessageLookupByLibrary.simpleMessage("Imię"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "password_not_the_same":

@@ -1,5 +1,10 @@
 {
   "@@locale": "en",
+  "@auth_social_text": {
+    "placeholders": {
+      "text": {}
+    }
+  },
   "empty_field": "Field can't be empty",
   "valid_email": "Please enter a valid email address",
   "invalid_password": "Password must be at least 8 characters, contain at least one uppercase letter, one lowercase letter and one number",
@@ -22,9 +27,5 @@
   "add_special_char": "Add special characters",
   "password_not_the_same": "Passwords are not the same",
   "auth_social_text": "lub {text} przez",
-  "@auth_social_text": {
-    "placeholders": {
-      "text": {}
-    }
-  }
+  "logout": "Logout"
 }

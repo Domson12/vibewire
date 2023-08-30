@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Invalid Phone Number, must be 9 digits (Polish number))"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_not_the_same":
