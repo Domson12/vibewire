@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "871558441648",
+    "project_id": "vibewire-9979c",
+    "storage_bucket": "vibewire-9979c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871558441648:android:de4241c648c220f9216975",
+        "android_client_info": {
+          "package_name": "com.example.vibewire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871558441648-432bp7vv1q2js5usn9fakpm1p5euc731.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWAXg_y6-KMtikcKxZZjROk2JXVTh9OfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871558441648-432bp7vv1q2js5usn9fakpm1p5euc731.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "871558441648-bgf9rahjbo7e5ahdu8r8f8ni8tdmti15.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vibewire"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

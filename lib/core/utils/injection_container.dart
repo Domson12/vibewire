@@ -1,9 +1,10 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:vibewire/core/utils/injection_container.config.dart';
+
+import '../../../core/utils/injection_container.config.dart';
 
 
-final getIt = GetIt.instance;
+final sl = GetIt.instance;
 
 @InjectableInit()
-void configureDependencies() => getIt.init();
+Future<void> configureDependencies() => sl.init();
