@@ -12,7 +12,6 @@ _$_RegisterModel _$$_RegisterModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       lastName: json['lastName'] as String,
       email: json['email'] as String,
-      password: json['password'] as String,
     );
 
 Map<String, dynamic> _$$_RegisterModelToJson(_$_RegisterModel instance) =>
@@ -21,5 +20,4 @@ Map<String, dynamic> _$$_RegisterModelToJson(_$_RegisterModel instance) =>
       'name': instance.name,
       'lastName': instance.lastName,
       'email': instance.email,
-      'password': instance.password,
     };

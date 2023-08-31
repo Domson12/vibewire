@@ -12,6 +12,8 @@ abstract class IAuthFacade {
 
   Future<void> googleSignIn();
 
+  Future<void> facebookSignIn();
+
   Future<RegisterModel?> getUser();
 
   Future<void> logOut();

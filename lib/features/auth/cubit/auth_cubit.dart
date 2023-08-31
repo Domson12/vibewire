@@ -85,7 +85,17 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> facebookSignIn() async{
-    //TODO: Facebook Sign In
+    emit(state.copyWith(isLoading: true));
+    try {
+      await _authFacadeImpl.facebookSignIn();
+      emit(state.copyWith(isLoading: false));
+    } catch (e) {
+      emit(state.copyWith(
+        isLoading: false,
+        errorMessage: e.toString(),
+        showErrorMessage: true,
+      ));
+    }
   }
 
   void logout() async {

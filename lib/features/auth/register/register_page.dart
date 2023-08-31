@@ -167,9 +167,8 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                             text: S.of(context).register,
                             onTapGoogle: () =>
                                 context.read<AuthCubit>().googleSignIn(),
-                            onTapFacebook: () {
-                              //TODO: Facebook Sign In
-                            },
+                            onTapFacebook: () =>
+                                context.read<AuthCubit>().facebookSignIn(),
                           ),
                         ],
                       ),

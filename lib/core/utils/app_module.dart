@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 
 import '../service/firebase_service.dart';
 
@@ -12,7 +12,7 @@ abstract class AppModule {
   Future<FirebaseService> get fireService => FirebaseService.init();
 
   @lazySingleton
-  FirebaseFirestore get store => FirebaseFirestore.instance;
+  FirebaseFirestore get firestore => FirebaseFirestore.instance;
 
   @lazySingleton
   FirebaseAuth get auth => FirebaseAuth.instance;
@@ -21,5 +21,5 @@ abstract class AppModule {
   GoogleSignIn get googleSignIn => GoogleSignIn();
 
   @lazySingleton
-  FirebaseMessaging get firebaseMessaging => FirebaseMessaging.instance;
+  FacebookAuth get facebookAuth => FacebookAuth.instance;
 }

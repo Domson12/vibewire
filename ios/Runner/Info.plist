@@ -10,11 +10,16 @@
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>com.googleusercontent.apps.871558441648-bgf9rahjbo7e5ahdu8r8f8ni8tdmti15</string>
+					 <string>fb985478689382814</string>
 				</array>
 			</dict>
 		</array>
-		<key>CFBundleDevelopmentRegion</key>
-		<string>$(DEVELOPMENT_LANGUAGE)</string>
+		<key>FacebookAppID</key>
+        <string>985478689382814</string>
+        <key>FacebookClientToken</key>
+        <string>cb72784155ed7e90d4524a9d439392ce</string>
+        <key>FacebookDisplayName</key>
+        <string>Vibewire</string>
 		<key>CFBundleDisplayName</key>
 		<string>Vibewire</string>
 		<key>CFBundleExecutable</key>

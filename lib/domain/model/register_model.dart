@@ -11,7 +11,6 @@ class RegisterModel with _$RegisterModel {
     required String name,
     required String lastName,
     required String email,
-    required String password,
   }) = _RegisterModel;
 
   factory RegisterModel.fromJson(Map<String, dynamic> json) =>

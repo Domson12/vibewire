@@ -24,7 +24,6 @@ mixin _$RegisterModel {
   String get name => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,12 +37,7 @@ abstract class $RegisterModelCopyWith<$Res> {
           RegisterModel value, $Res Function(RegisterModel) then) =
       _$RegisterModelCopyWithImpl<$Res, RegisterModel>;
   @useResult
-  $Res call(
-      {String? id,
-      String name,
-      String lastName,
-      String email,
-      String password});
+  $Res call({String? id, String name, String lastName, String email});
 }
 
 /// @nodoc
@@ -63,7 +57,6 @@ class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel>
     Object? name = null,
     Object? lastName = null,
     Object? email = null,
-    Object? password = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -82,10 +75,6 @@ class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -98,12 +87,7 @@ abstract class _$$_RegisterModelCopyWith<$Res>
       __$$_RegisterModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? id,
-      String name,
-      String lastName,
-      String email,
-      String password});
+  $Res call({String? id, String name, String lastName, String email});
 }
 
 /// @nodoc
@@ -121,7 +105,6 @@ class __$$_RegisterModelCopyWithImpl<$Res>
     Object? name = null,
     Object? lastName = null,
     Object? email = null,
-    Object? password = null,
   }) {
     return _then(_$_RegisterModel(
       id: freezed == id
@@ -140,10 +123,6 @@ class __$$_RegisterModelCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -155,8 +134,7 @@ class _$_RegisterModel implements _RegisterModel {
       {required this.id,
       required this.name,
       required this.lastName,
-      required this.email,
-      required this.password});
+      required this.email});
 
   factory _$_RegisterModel.fromJson(Map<String, dynamic> json) =>
       _$$_RegisterModelFromJson(json);
@@ -169,12 +147,10 @@ class _$_RegisterModel implements _RegisterModel {
   final String lastName;
   @override
   final String email;
-  @override
-  final String password;
 
   @override
   String toString() {
-    return 'RegisterModel(id: $id, name: $name, lastName: $lastName, email: $email, password: $password)';
+    return 'RegisterModel(id: $id, name: $name, lastName: $lastName, email: $email)';
   }
 
   @override
@@ -186,15 +162,12 @@ class _$_RegisterModel implements _RegisterModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.email, email) || other.email == email));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, lastName, email, password);
+  int get hashCode => Object.hash(runtimeType, id, name, lastName, email);
 
   @JsonKey(ignore: true)
   @override
@@ -215,8 +188,7 @@ abstract class _RegisterModel implements RegisterModel {
       {required final String? id,
       required final String name,
       required final String lastName,
-      required final String email,
-      required final String password}) = _$_RegisterModel;
+      required final String email}) = _$_RegisterModel;
 
   factory _RegisterModel.fromJson(Map<String, dynamic> json) =
       _$_RegisterModel.fromJson;
@@ -229,8 +201,6 @@ abstract class _RegisterModel implements RegisterModel {
   String get lastName;
   @override
   String get email;
-  @override
-  String get password;
   @override
   @JsonKey(ignore: true)
   _$$_RegisterModelCopyWith<_$_RegisterModel> get copyWith =>
