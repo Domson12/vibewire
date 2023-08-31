@@ -25,7 +25,9 @@ class AuthSocialRow extends StatelessWidget {
       children: [
         Text(
           S.of(context).auth_social_text(text),
-          style: Theme.of(context).xTextTheme.body1,
+          style: Theme.of(context).xTextTheme.body1.copyWith(
+                color: AppColors.white,
+          ),
         ),
         const SizedBox(width: 16),
         Row(

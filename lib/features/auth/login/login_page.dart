@@ -34,14 +34,10 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: AppColors.rgbBackground,
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    return  Scaffold(
+        backgroundColor: AppColors.primary,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.primary,
           elevation: 0,
         ),
         body: Center(
@@ -136,7 +132,6 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
             ),
           ),
         ),
-      ),
     );
   }
 }

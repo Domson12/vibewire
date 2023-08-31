@@ -41,10 +41,8 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(gradient: AppColors.rgbBackground),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    return Scaffold(
+        backgroundColor: AppColors.primary,
         body: SafeArea(
           child: SingleChildScrollView(
             child: BlocBuilder<AuthCubit, AuthState>(
@@ -179,7 +177,6 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
             ),
           ),
         ),
-      ),
     );
   }
 }
