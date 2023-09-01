@@ -19,24 +19,26 @@ class AuthSocialRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
           S.of(context).auth_social_text(text),
-          style: Theme.of(context).xTextTheme.body1.copyWith(
+          style: Theme.of(context).xTextTheme.h2.copyWith(
                 color: AppColors.white,
-          ),
+              ),
         ),
-        const SizedBox(width: 16),
+        const SizedBox(height: 10),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               onPressed: onTapFacebook,
               icon: const FaIcon(
                 FontAwesomeIcons.facebookF,
                 color: AppColors.white,
+                size: 24,
               ),
             ),
             IconButton(
@@ -44,6 +46,7 @@ class AuthSocialRow extends StatelessWidget {
               icon: const FaIcon(
                 FontAwesomeIcons.google,
                 color: AppColors.white,
+                size: 24,
               ),
             ),
           ],

@@ -14,6 +14,24 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/human1.jpg
+  AssetGenImage get human1 => const AssetGenImage('assets/images/human1.jpg');
+
+  /// File path: assets/images/human2.jpg
+  AssetGenImage get human2 => const AssetGenImage('assets/images/human2.jpg');
+
+  /// File path: assets/images/human3.jpg
+  AssetGenImage get human3 => const AssetGenImage('assets/images/human3.jpg');
+
+  /// File path: assets/images/human4.jpg
+  AssetGenImage get human4 => const AssetGenImage('assets/images/human4.jpg');
+
+  /// File path: assets/images/human5.jpg
+  AssetGenImage get human5 => const AssetGenImage('assets/images/human5.jpg');
+
+  /// File path: assets/images/human6.jpg
+  AssetGenImage get human6 => const AssetGenImage('assets/images/human6.jpg');
+
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
@@ -22,7 +40,8 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/splash_icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logo, splashIcon];
+  List<AssetGenImage> get values =>
+      [human1, human2, human3, human4, human5, human6, logo, splashIcon];
 }
 
 class $AssetsSvgGen {

@@ -27,5 +27,7 @@
   "add_special_char": "Add special characters",
   "password_not_the_same": "Passwords are not the same",
   "auth_social_text": "lub {text} przez",
-  "logout": "Logout"
+  "logout": "Logout",
+  "meet_new_people": "Meet new people and make friends",
+  "meet_new_friend": "find new friend connection or partner"
 }
