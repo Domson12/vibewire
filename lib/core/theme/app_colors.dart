@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 class AppColors {
-  static const primary = Color(0xFF1E88E5);
-  static const primaryDark = Color(0xFF1565C0);
+  static const primary = Color(0xFF8165EA);
+  static const primarzDark = Color(0xFF8165EA);
+  static const secondary = Color(0xFF7E57C2);
   static const primaryLight = Color(0xFF64B5F6);
   static const accent = Color(0xFFFF4081);
   static const accentLight = Color(0xFFFF80AB);

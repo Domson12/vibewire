@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../../core/common/widget/app_elevated_button.dart';
 import '../../../core/common/widget/auth_form_field.dart';
-import '../../../core/common/widget/auth_social_row.dart';
 import '../../../core/navigation/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
@@ -41,10 +40,11 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(gradient: AppColors.rgbBackground),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    return Scaffold(
+        backgroundColor: AppColors.primary,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: BlocBuilder<AuthCubit, AuthState>(
@@ -163,13 +163,6 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          AuthSocialRow(
-                            text: S.of(context).register,
-                            onTapGoogle: () =>
-                                context.read<AuthCubit>().googleSignIn(),
-                            onTapFacebook: () =>
-                                context.read<AuthCubit>().facebookSignIn(),
-                          ),
                         ],
                       ),
                     ),
@@ -179,7 +172,6 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
             ),
           ),
         ),
-      ),
     );
   }
 }

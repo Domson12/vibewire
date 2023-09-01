@@ -289,6 +289,26 @@ class S {
       args: [],
     );
   }
+
+  /// `poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół`
+  String get meet_new_people {
+    return Intl.message(
+      'poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół',
+      name: 'meet_new_people',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `poznaj nowych przyjaciół lub znajdź partnera`
+  String get meet_new_friend {
+    return Intl.message(
+      'poznaj nowych przyjaciół lub znajdź partnera',
+      name: 'meet_new_friend',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

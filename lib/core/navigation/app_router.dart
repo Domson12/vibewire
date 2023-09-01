@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../features/auth/auth_page.dart';
 import '../../features/auth/auth_wrapper_page.dart';
 import '../../features/auth/login/login_page.dart';
+import '../../features/auth/main/auth_main_page.dart';
 import '../../features/auth/register/register_page.dart';
 import '../../features/dashboard/dashboard_page.dart';
 import '../../features/dashboard/main/main_page.dart';
@@ -23,7 +24,8 @@ class AppRouter extends _$AppRouter {
           page: AuthRoute.page,
           initial: true,
           children: [
-            AutoRoute(page: RegisterRoute.page, initial: true),
+            AutoRoute(page: AuthMainRoute.page, initial: true),
+            AutoRoute(page: RegisterRoute.page),
             AutoRoute(page: LoginRoute.page),
           ],
         ),

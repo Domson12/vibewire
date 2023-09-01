@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:vibewire/core/theme/vibe_theme_Extension.dart';
+import '../../theme/vibe_theme_Extension.dart';
 import '../../theme/app_colors.dart';
 
 class AuthNavigationRow extends StatelessWidget {

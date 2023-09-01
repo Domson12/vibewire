@@ -28,5 +28,7 @@
   "password_not_the_same": "Hasła nie są takie same",
   "login_success": "Login Successful",
   "auth_social_text": "lub {text} przez",
-  "logout": "Wyloguj się"
+  "logout": "Wyloguj się",
+  "meet_new_people": "poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół",
+  "meet_new_friend": "poznaj nowych przyjaciół lub znajdź partnera"
 }
