@@ -1,4 +1,3 @@
-import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
-import '../cubit/auth_cubit.dart';
+import '../../cubit/auth/auth_cubit.dart';
 import 'widget/main_image_grid.dart';
 
 @RoutePage()

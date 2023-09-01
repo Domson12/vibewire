@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
-import '../../auth/cubit/auth_cubit.dart';
+import '../../cubit/auth/auth_cubit.dart';
 
 @RoutePage()
-class MainPage extends StatelessWidget implements AutoRouteWrapper {
-  const MainPage({super.key});
+class HomePage extends StatelessWidget implements AutoRouteWrapper {
+  const HomePage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -20,12 +20,12 @@ class MainPage extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: AppColors.rgbBackground,
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
+    return Scaffold(
+        backgroundColor: AppColors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
         body: BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) {
             return Center(
@@ -40,7 +40,6 @@ class MainPage extends StatelessWidget implements AutoRouteWrapper {
             );
           },
         ),
-      ),
     );
   }
 }

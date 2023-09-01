@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import '../../../domain/repository_impl/auth_facade_impl.dart';
+import '../../../../domain/repository_impl/auth_facade_impl.dart';
 
 part 'auth_state.dart';
-
 part 'auth_cubit.freezed.dart';
 
 @injectable

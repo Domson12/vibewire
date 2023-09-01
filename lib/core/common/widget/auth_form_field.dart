@@ -33,11 +33,11 @@ class AuthFormField extends StatelessWidget {
   decoration: InputDecoration(
   errorBorder: OutlineInputBorder(
   borderSide: const BorderSide(color: AppColors.indigo, width: 1.0),
-  borderRadius: BorderRadius.circular(8.0),
+  borderRadius: BorderRadius.circular(20.0),
   ),
   focusedErrorBorder: OutlineInputBorder(
   borderSide: const BorderSide(color: AppColors.indigo, width: 1.0),
-  borderRadius: BorderRadius.circular(8.0),
+  borderRadius: BorderRadius.circular(20.0),
   ),
   errorStyle: Theme.of(context).xTextTheme.h2.copyWith(
   fontSize: 15,
@@ -55,11 +55,11 @@ class AuthFormField extends StatelessWidget {
   fillColor: AppColors.white,
   enabledBorder: OutlineInputBorder(
   borderSide: const BorderSide(color: AppColors.indigo, width: 1.0),
-  borderRadius: BorderRadius.circular(8.0),
+  borderRadius: BorderRadius.circular(20.0),
   ),
   focusedBorder: OutlineInputBorder(
   borderSide: const BorderSide(color: AppColors.indigo, width: 1.0),
-  borderRadius: BorderRadius.circular(8.0),
+  borderRadius: BorderRadius.circular(20.0),
   ),
   ),
   );

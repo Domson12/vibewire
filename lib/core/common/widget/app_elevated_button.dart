@@ -23,7 +23,7 @@ class AppElevatedButton extends StatelessWidget {
         foregroundColor: foregroundColor,
         backgroundColor: backgroundColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(40),
         ),
       ),
       child: Padding(

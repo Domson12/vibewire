@@ -19,7 +19,7 @@ import 'package:vibewire/core/navigation/app_router.dart' as _i3;
 import 'package:vibewire/core/service/firebase_service.dart' as _i7;
 import 'package:vibewire/core/utils/app_module.dart' as _i11;
 import 'package:vibewire/domain/repository_impl/auth_facade_impl.dart' as _i9;
-import 'package:vibewire/features/auth/cubit/auth_cubit.dart' as _i10;
+import 'package:vibewire/features/cubit/auth/auth_cubit.dart' as _i10;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
