@@ -30,5 +30,17 @@
   "auth_social_text": "lub {text} przez",
   "logout": "Wyloguj się",
   "meet_new_people": "poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół",
-  "meet_new_friend": "poznaj nowych przyjaciół lub znajdź partnera"
+  "meet_new_friend": "poznaj nowych przyjaciół lub znajdź partnera",
+  "search": "Szukaj",
+  "trending": "Trending",
+  "latest": "Latest",
+  "discover": "Discover",
+  "daily_new": "Daily New",
+  "profile": "Profile",
+  "notification": "Notification",
+  "message": "Message",
+  "stream": "Stream",
+  "home": "Home",
+  "add_story": "Add Story",
+  "add_post": "Add Post"
 }

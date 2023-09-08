@@ -29,5 +29,16 @@
   "auth_social_text": "lub {text} przez",
   "logout": "Logout",
   "meet_new_people": "Meet new people and make friends",
-  "meet_new_friend": "find new friend connection or partner"
+  "meet_new_friend": "find new friend connection or partner",
+  "search": "Search",
+  "trending": "Trending",
+  "latest": "Latest",
+  "discover": "Discover",
+  "daily_new": "Daily New",
+  "profile": "Profile",
+  "notification": "Notification",
+  "message": "Message",
+  "stream": "Stream",
+  "home": "Home",
+  "add_story": "Add Story"
 }

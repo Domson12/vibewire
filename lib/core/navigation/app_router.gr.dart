@@ -15,6 +15,24 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AddMainPostRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AddMainPostPage(),
+      );
+    },
+    AddPostRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AddPostPage(),
+      );
+    },
+    AddStoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AddStoryPage(),
+      );
+    },
     AuthMainRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -54,7 +72,7 @@ abstract class _$AppRouter extends RootStackRouter {
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const HomePage()),
+        child: const HomePage(),
       );
     },
     LatestRoute.name: (routeData) {
@@ -110,6 +128,48 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AddMainPostPage]
+class AddMainPostRoute extends PageRouteInfo<void> {
+  const AddMainPostRoute({List<PageRouteInfo>? children})
+      : super(
+          AddMainPostRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddMainPostRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AddPostPage]
+class AddPostRoute extends PageRouteInfo<void> {
+  const AddPostRoute({List<PageRouteInfo>? children})
+      : super(
+          AddPostRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddPostRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AddStoryPage]
+class AddStoryRoute extends PageRouteInfo<void> {
+  const AddStoryRoute({List<PageRouteInfo>? children})
+      : super(
+          AddStoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddStoryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import '../../../../domain/repository_impl/auth_facade_impl.dart';
 
 part 'auth_state.dart';
+
 part 'auth_cubit.freezed.dart';
 
 @injectable
@@ -83,7 +84,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> facebookSignIn() async{
+  Future<void> facebookSignIn() async {
     emit(state.copyWith(isLoading: true));
     try {
       await _authFacadeImpl.facebookSignIn();

@@ -52,6 +52,8 @@ dependencies:
   geolocator: ^10.0.0
   cached_network_image: ^3.2.3
   envied: ^0.3.0+3
+  floating_tabbar: ^0.0.9
+
 
 
 flutter_native_splash:

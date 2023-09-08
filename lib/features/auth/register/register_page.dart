@@ -8,7 +8,7 @@ import '../../../core/navigation/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/utils/validator.dart';
-import '../../cubit/auth/auth_cubit.dart';
+import '../cubit/auth_cubit.dart';
 import '../../../core/common/widget/auth_logo.dart';
 import '../../../core/common/widget/auth_navigation_row.dart';
 import '../../../core/utils/injection_container.dart';

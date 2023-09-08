@@ -22,17 +22,17 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  final AppRouter appRouter = AppRouter();
+  final AppRouter _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
     return MaterialApp.router(
       theme: AppTheme.appLight,
-      routerDelegate: appRouter.delegate(),
+      routerDelegate: _appRouter.delegate(),
       supportedLocales: S.delegate.supportedLocales,
-      routeInformationParser: appRouter.defaultRouteParser(),
-      routeInformationProvider: appRouter.routeInfoProvider(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
+      routeInformationProvider: _appRouter.routeInfoProvider(),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

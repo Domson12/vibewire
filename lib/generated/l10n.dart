@@ -309,6 +309,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Szukaj`
+  String get search {
+    return Intl.message(
+      'Szukaj',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trending`
+  String get trending {
+    return Intl.message(
+      'Trending',
+      name: 'trending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest`
+  String get latest {
+    return Intl.message(
+      'Latest',
+      name: 'latest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover`
+  String get discover {
+    return Intl.message(
+      'Discover',
+      name: 'discover',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily New`
+  String get daily_new {
+    return Intl.message(
+      'Daily New',
+      name: 'daily_new',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message`
+  String get message {
+    return Intl.message(
+      'Message',
+      name: 'message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stream`
+  String get stream {
+    return Intl.message(
+      'Stream',
+      name: 'stream',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Story`
+  String get add_story {
+    return Intl.message(
+      'Add Story',
+      name: 'add_story',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Post`
+  String get add_post {
+    return Intl.message(
+      'Add Post',
+      name: 'add_post',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

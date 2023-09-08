@@ -29,17 +29,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_lowercase":
             MessageLookupByLibrary.simpleMessage("Dodaj małe litery"),
         "add_numbers": MessageLookupByLibrary.simpleMessage("Dodaj cyfry"),
+        "add_post": MessageLookupByLibrary.simpleMessage("Add Post"),
         "add_special_char":
             MessageLookupByLibrary.simpleMessage("Dodaj znaki specjalne"),
+        "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
         "auth_social_text": m0,
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
+        "daily_new": MessageLookupByLibrary.simpleMessage("Daily New"),
+        "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("Pole nie może być puste"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Zapomniałeś hasła?"),
         "have_account": MessageLookupByLibrary.simpleMessage("Masz już konto?"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "invalid_email":
             MessageLookupByLibrary.simpleMessage("Wpisz poprawny email"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
+        "latest": MessageLookupByLibrary.simpleMessage("Latest"),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
         "login_success":
             MessageLookupByLibrary.simpleMessage("Login Successful"),
@@ -56,15 +62,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "poznaj nowych przyjaciół lub znajdź partnera"),
         "meet_new_people": MessageLookupByLibrary.simpleMessage(
             "poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
         "name": MessageLookupByLibrary.simpleMessage("Imię"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "password_not_the_same":
             MessageLookupByLibrary.simpleMessage("Hasła nie są takie same"),
         "password_too_short":
             MessageLookupByLibrary.simpleMessage("Hasło jest za krótkie"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Zresetuj hasło"),
-        "surname": MessageLookupByLibrary.simpleMessage("Nazwisko")
+        "search": MessageLookupByLibrary.simpleMessage("Szukaj"),
+        "stream": MessageLookupByLibrary.simpleMessage("Stream"),
+        "surname": MessageLookupByLibrary.simpleMessage("Nazwisko"),
+        "trending": MessageLookupByLibrary.simpleMessage("Trending")
       };
 }

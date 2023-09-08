@@ -11,7 +11,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../core/utils/validator.dart';
 import '../../../generated/l10n.dart';
-import '../../cubit/auth/auth_cubit.dart';
+import '../cubit/auth_cubit.dart';
 
 @RoutePage()
 class LoginPage extends StatelessWidget implements AutoRouteWrapper {

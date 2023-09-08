@@ -6,6 +6,9 @@ import '../../features/auth/auth_wrapper_page.dart';
 import '../../features/auth/login/login_page.dart';
 import '../../features/auth/main/auth_main_page.dart';
 import '../../features/auth/register/register_page.dart';
+import '../../features/dashboard/add_post/add_main_post/add_main_post_page.dart';
+import '../../features/dashboard/add_post/add_post_page.dart';
+import '../../features/dashboard/add_post/add_story/add_story_page.dart';
 import '../../features/dashboard/dashboard_page.dart';
 import '../../features/dashboard/home/daily_new/daily_new_page.dart';
 import '../../features/dashboard/home/discover/discover_page.dart';
@@ -40,16 +43,12 @@ class AppRouter extends _$AppRouter {
             AutoRoute(
               page: DashboardRoute.page,
               children: [
-                AutoRoute(
-                  page: HomeRoute.page,
-                  initial: true,
-                  children: [
-                    AutoRoute(page: TrendingRoute.page),
-                    AutoRoute(page: LatestRoute.page),
-                    AutoRoute(page: DailyNewRoute.page),
-                    AutoRoute(page: DiscoverRoute.page),
-                  ],
-                ),
+                AutoRoute(page: HomeRoute.page, children: [
+                  AutoRoute(page: DiscoverRoute.page, initial: true),
+                  AutoRoute(page: DailyNewRoute.page),
+                  AutoRoute(page: LatestRoute.page),
+                  AutoRoute(page: TrendingRoute.page),
+                ]),
                 AutoRoute(page: StreamRoute.page),
                 AutoRoute(page: MessageRoute.page),
                 AutoRoute(page: NotificationRoute.page),
@@ -58,5 +57,9 @@ class AppRouter extends _$AppRouter {
             ),
           ],
         ),
+        AutoRoute(page: AddPostRoute.page, children: [
+          AutoRoute(page: AddMainPostRoute.page, initial: true),
+          AutoRoute(page: AddStoryRoute.page),
+        ])
       ];
 }

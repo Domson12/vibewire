@@ -9,7 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
-import '../../cubit/auth/auth_cubit.dart';
+import '../cubit/auth_cubit.dart';
 import 'widget/main_image_grid.dart';
 
 @RoutePage()
