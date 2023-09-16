@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import '../model/register_model.dart';
 
 abstract class IAuthFacade {
@@ -14,7 +16,11 @@ abstract class IAuthFacade {
 
   Future<void> facebookSignIn();
 
-  Future<RegisterModel?> getUser();
+  Future<RegisterModel?> getUserData();
+
+  String? getUid();
 
   Future<void> logOut();
+
+  Future<void> addPhotoToStorage(String childName, Uint8List file, bool isPost);
 }

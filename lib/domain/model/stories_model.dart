@@ -14,7 +14,7 @@ class StoriesModel with _$StoriesModel {
     required List likes,
     required String profileImage,
     required String storiesImage,
-    required String datePublished,
+    required DateTime datePublished,
   }) = _StoriesModel;
 
   factory StoriesModel.fromJson(Map<String, dynamic> json) =>

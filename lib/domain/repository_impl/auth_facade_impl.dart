@@ -1,8 +1,12 @@
+import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:uuid/uuid.dart';
 
 import '../model/register_model.dart';
 import '../repository/auth_facade.dart';
@@ -14,6 +18,7 @@ class AuthFacadeImpl implements IAuthFacade {
     this._firestore,
     this._googleSignIn,
     this._facebookAuth,
+    this._storage,
   );
 
   final FirebaseAuth _firebaseAuth;
@@ -24,8 +29,10 @@ class AuthFacadeImpl implements IAuthFacade {
 
   final FirebaseFirestore _firestore;
 
+  final FirebaseStorage _storage;
+
   @override
-  Future<RegisterModel?> getUser() {
+  Future<RegisterModel?> getUserData() {
     //TODO: implement getUser
     throw UnimplementedError();
   }
@@ -42,14 +49,12 @@ class AuthFacadeImpl implements IAuthFacade {
     required String name,
     required String lastName,
   }) async {
-    //create user
     UserCredential credentials =
         await _firebaseAuth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
 
-    //create user model
     RegisterModel user = RegisterModel(
       id: credentials.user?.uid,
       email: email,
@@ -57,7 +62,6 @@ class AuthFacadeImpl implements IAuthFacade {
       lastName: lastName,
     );
 
-    //save user to firestore
     await _firestore
         .collection('users')
         .doc(credentials.user?.uid)
@@ -97,6 +101,35 @@ class AuthFacadeImpl implements IAuthFacade {
       final facebookAuthCredential =
           FacebookAuthProvider.credential(accessToken.token);
       await _firebaseAuth.signInWithCredential(facebookAuthCredential);
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  @override
+  Future<String> addPhotoToStorage(
+      String childName, Uint8List file, bool isPost) async {
+    Reference ref =
+        _storage.ref().child(childName).child(_firebaseAuth.currentUser!.uid);
+
+    if (isPost) {
+      String id = const Uuid().v1();
+      ref = ref.child(id);
+    }
+
+    UploadTask uploadTask = ref.putData(file);
+
+    TaskSnapshot taskSnapshot = await uploadTask;
+
+    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
+
+    return downloadUrl;
+  }
+
+  @override
+  String getUid() {
+    try {
+      return _firebaseAuth.currentUser!.uid;
     } catch (e) {
       throw Exception(e);
     }

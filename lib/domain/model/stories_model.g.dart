@@ -15,7 +15,7 @@ _$_StoriesModel _$$_StoriesModelFromJson(Map<String, dynamic> json) =>
       likes: json['likes'] as List<dynamic>,
       profileImage: json['profileImage'] as String,
       storiesImage: json['storiesImage'] as String,
-      datePublished: json['datePublished'] as String,
+      datePublished: DateTime.parse(json['datePublished'] as String),
     );
 
 Map<String, dynamic> _$$_StoriesModelToJson(_$_StoriesModel instance) =>
@@ -27,5 +27,5 @@ Map<String, dynamic> _$$_StoriesModelToJson(_$_StoriesModel instance) =>
       'likes': instance.likes,
       'profileImage': instance.profileImage,
       'storiesImage': instance.storiesImage,
-      'datePublished': instance.datePublished,
+      'datePublished': instance.datePublished.toIso8601String(),
     };

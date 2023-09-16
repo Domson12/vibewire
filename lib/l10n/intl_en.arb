@@ -40,5 +40,9 @@
   "message": "Message",
   "stream": "Stream",
   "home": "Home",
-  "add_story": "Add Story"
+  "add_story": "Add Story",
+  "description": "Description",
+  "title": "Title",
+  "add_main_post": "Add Main Post",
+  "change_locale": "Change Locale"
 }

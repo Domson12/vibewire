@@ -29,9 +29,9 @@ class AddPostPage extends StatelessWidget {
                 CustomTab(text: S.of(context).add_story),
               ]),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            AddMainPostPage(),
+            const AddMainPostPage(),
             AddStoryPage(),
           ],
         ),

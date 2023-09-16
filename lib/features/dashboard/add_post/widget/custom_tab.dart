@@ -12,15 +12,13 @@ class CustomTab extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(0.5),
+        color: AppColors.primary,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Colors.grey.withOpacity(0.3),
+          color: AppColors.grey,
         ),
       ),
-      child:  Center(
-        child: Text(text),
-      )
+      child: Text(text),
     );
   }
 }

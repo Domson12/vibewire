@@ -28,14 +28,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add capital letters"),
         "add_lowercase":
             MessageLookupByLibrary.simpleMessage("Add lowercase letters"),
+        "add_main_post": MessageLookupByLibrary.simpleMessage("Add Main Post"),
         "add_numbers": MessageLookupByLibrary.simpleMessage("Add numbers"),
         "add_special_char":
             MessageLookupByLibrary.simpleMessage("Add special characters"),
         "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
         "auth_social_text": m0,
+        "change_locale": MessageLookupByLibrary.simpleMessage("Change Locale"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "daily_new": MessageLookupByLibrary.simpleMessage("Daily New"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
@@ -73,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "stream": MessageLookupByLibrary.simpleMessage("Stream"),
         "surname": MessageLookupByLibrary.simpleMessage("Surname"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
         "trending": MessageLookupByLibrary.simpleMessage("Trending")
       };
 }

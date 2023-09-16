@@ -320,111 +320,151 @@ class S {
     );
   }
 
-  /// `Trending`
+  /// `na czasie`
   String get trending {
     return Intl.message(
-      'Trending',
+      'na czasie',
       name: 'trending',
       desc: '',
       args: [],
     );
   }
 
-  /// `Latest`
+  /// `najnowsze`
   String get latest {
     return Intl.message(
-      'Latest',
+      'najnowsze',
       name: 'latest',
       desc: '',
       args: [],
     );
   }
 
-  /// `Discover`
+  /// `Odkryj`
   String get discover {
     return Intl.message(
-      'Discover',
+      'Odkryj',
       name: 'discover',
       desc: '',
       args: [],
     );
   }
 
-  /// `Daily New`
+  /// `nowe`
   String get daily_new {
     return Intl.message(
-      'Daily New',
+      'nowe',
       name: 'daily_new',
       desc: '',
       args: [],
     );
   }
 
-  /// `Profile`
+  /// `Profil`
   String get profile {
     return Intl.message(
-      'Profile',
+      'Profil',
       name: 'profile',
       desc: '',
       args: [],
     );
   }
 
-  /// `Notification`
+  /// `Powiadomienia`
   String get notification {
     return Intl.message(
-      'Notification',
+      'Powiadomienia',
       name: 'notification',
       desc: '',
       args: [],
     );
   }
 
-  /// `Message`
+  /// `Wiadomości`
   String get message {
     return Intl.message(
-      'Message',
+      'Wiadomości',
       name: 'message',
       desc: '',
       args: [],
     );
   }
 
-  /// `Stream`
+  /// `Na żywo`
   String get stream {
     return Intl.message(
-      'Stream',
+      'Na żywo',
       name: 'stream',
       desc: '',
       args: [],
     );
   }
 
-  /// `Home`
+  /// `Strona główna`
   String get home {
     return Intl.message(
-      'Home',
+      'Strona główna',
       name: 'home',
       desc: '',
       args: [],
     );
   }
 
-  /// `Add Story`
+  /// `Dodaj story`
   String get add_story {
     return Intl.message(
-      'Add Story',
+      'Dodaj story',
       name: 'add_story',
       desc: '',
       args: [],
     );
   }
 
-  /// `Add Post`
+  /// `Dodaj post`
   String get add_post {
     return Intl.message(
-      'Add Post',
+      'Dodaj post',
       name: 'add_post',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opis`
+  String get description {
+    return Intl.message(
+      'Opis',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tytuł`
+  String get title {
+    return Intl.message(
+      'Tytuł',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj główny post`
+  String get add_main_post {
+    return Intl.message(
+      'Dodaj główny post',
+      name: 'add_main_post',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `zmień język`
+  String get change_locale {
+    return Intl.message(
+      'zmień język',
+      name: 'change_locale',
       desc: '',
       args: [],
     );
@@ -437,6 +477,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'pl'),
+      Locale.fromSubtags(languageCode: 'ar'),
       Locale.fromSubtags(languageCode: 'en'),
     ];
   }

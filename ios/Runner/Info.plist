@@ -57,6 +57,12 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>CFBundleLocalizations</key>
+        <array>
+            <string>pl</string>
+            <string>en</string>
+            <string>ar</string>
+        </array>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>

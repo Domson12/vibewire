@@ -30,6 +30,11 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
+
+  String getUuid() {
+    return _authFacadeImpl.getUid();
+  }
+
   Future<void> register({
     required String email,
     required String password,

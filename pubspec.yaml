@@ -31,7 +31,7 @@ dependencies:
   flutter_svg: ^2.0.7
   infinite_scroll_pagination: ^3.2.0
   group_button: ^5.3.2
-  image_picker: ^1.0.1
+  image_picker: ^1.0.4
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
   flutter_form_builder: ^9.1.0
@@ -53,6 +53,9 @@ dependencies:
   cached_network_image: ^3.2.3
   envied: ^0.3.0+3
   floating_tabbar: ^0.0.9
+  firebase_storage: ^11.2.6
+  uuid: ^3.0.7
+  scoped_model: ^2.0.0
 
 
 

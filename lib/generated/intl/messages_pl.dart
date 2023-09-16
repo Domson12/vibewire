@@ -28,23 +28,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dodaj duze litery"),
         "add_lowercase":
             MessageLookupByLibrary.simpleMessage("Dodaj małe litery"),
+        "add_main_post":
+            MessageLookupByLibrary.simpleMessage("Dodaj główny post"),
         "add_numbers": MessageLookupByLibrary.simpleMessage("Dodaj cyfry"),
-        "add_post": MessageLookupByLibrary.simpleMessage("Add Post"),
+        "add_post": MessageLookupByLibrary.simpleMessage("Dodaj post"),
         "add_special_char":
             MessageLookupByLibrary.simpleMessage("Dodaj znaki specjalne"),
-        "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
+        "add_story": MessageLookupByLibrary.simpleMessage("Dodaj story"),
         "auth_social_text": m0,
+        "change_locale": MessageLookupByLibrary.simpleMessage("zmień język"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
-        "daily_new": MessageLookupByLibrary.simpleMessage("Daily New"),
-        "discover": MessageLookupByLibrary.simpleMessage("Discover"),
+        "daily_new": MessageLookupByLibrary.simpleMessage("nowe"),
+        "description": MessageLookupByLibrary.simpleMessage("Opis"),
+        "discover": MessageLookupByLibrary.simpleMessage("Odkryj"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("Pole nie może być puste"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Zapomniałeś hasła?"),
         "have_account": MessageLookupByLibrary.simpleMessage("Masz już konto?"),
-        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "home": MessageLookupByLibrary.simpleMessage("Strona główna"),
         "invalid_email":
             MessageLookupByLibrary.simpleMessage("Wpisz poprawny email"),
         "invalid_name": MessageLookupByLibrary.simpleMessage(
@@ -53,7 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hasło musi mieć co najmniej 6 znaków, w tym jedną cyfrę, jedną wielką literę i jedną małą literę"),
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Niepoprawny numer telefonu. Numer musi mieć 9 cyfr (polski numer)"),
-        "latest": MessageLookupByLibrary.simpleMessage("Latest"),
+        "latest": MessageLookupByLibrary.simpleMessage("najnowsze"),
         "login": MessageLookupByLibrary.simpleMessage("Zaloguj się"),
         "login_success":
             MessageLookupByLibrary.simpleMessage("Login Successful"),
@@ -62,21 +66,22 @@ class MessageLookup extends MessageLookupByLibrary {
             "poznaj nowych przyjaciół lub znajdź partnera"),
         "meet_new_people": MessageLookupByLibrary.simpleMessage(
             "poznaj nowych ludzi, kontakty i lub znajdź nowych przyjaciół"),
-        "message": MessageLookupByLibrary.simpleMessage("Message"),
+        "message": MessageLookupByLibrary.simpleMessage("Wiadomości"),
         "name": MessageLookupByLibrary.simpleMessage("Imię"),
-        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "notification": MessageLookupByLibrary.simpleMessage("Powiadomienia"),
         "password": MessageLookupByLibrary.simpleMessage("Hasło"),
         "password_not_the_same":
             MessageLookupByLibrary.simpleMessage("Hasła nie są takie same"),
         "password_too_short":
             MessageLookupByLibrary.simpleMessage("Hasło jest za krótkie"),
-        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profil"),
         "register": MessageLookupByLibrary.simpleMessage("Zarejestruj się"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Zresetuj hasło"),
         "search": MessageLookupByLibrary.simpleMessage("Szukaj"),
-        "stream": MessageLookupByLibrary.simpleMessage("Stream"),
+        "stream": MessageLookupByLibrary.simpleMessage("Na żywo"),
         "surname": MessageLookupByLibrary.simpleMessage("Nazwisko"),
-        "trending": MessageLookupByLibrary.simpleMessage("Trending")
+        "title": MessageLookupByLibrary.simpleMessage("Tytuł"),
+        "trending": MessageLookupByLibrary.simpleMessage("na czasie")
       };
 }

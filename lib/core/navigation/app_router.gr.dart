@@ -18,7 +18,7 @@ abstract class _$AppRouter extends RootStackRouter {
     AddMainPostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AddMainPostPage(),
+        child: WrappedRoute(child: const AddMainPostPage()),
       );
     },
     AddPostRoute.name: (routeData) {
@@ -28,9 +28,11 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     AddStoryRoute.name: (routeData) {
+      final args = routeData.argsAs<AddStoryRouteArgs>(
+          orElse: () => const AddStoryRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AddStoryPage(),
+        child: WrappedRoute(child: AddStoryPage(key: args.key)),
       );
     },
     AuthMainRoute.name: (routeData) {
@@ -160,16 +162,31 @@ class AddPostRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [AddStoryPage]
-class AddStoryRoute extends PageRouteInfo<void> {
-  const AddStoryRoute({List<PageRouteInfo>? children})
-      : super(
+class AddStoryRoute extends PageRouteInfo<AddStoryRouteArgs> {
+  AddStoryRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           AddStoryRoute.name,
+          args: AddStoryRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'AddStoryRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<AddStoryRouteArgs> page =
+      PageInfo<AddStoryRouteArgs>(name);
+}
+
+class AddStoryRouteArgs {
+  const AddStoryRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AddStoryRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

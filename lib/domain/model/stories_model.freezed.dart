@@ -27,7 +27,7 @@ mixin _$StoriesModel {
   List<dynamic> get likes => throw _privateConstructorUsedError;
   String get profileImage => throw _privateConstructorUsedError;
   String get storiesImage => throw _privateConstructorUsedError;
-  String get datePublished => throw _privateConstructorUsedError;
+  DateTime get datePublished => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +49,7 @@ abstract class $StoriesModelCopyWith<$Res> {
       List<dynamic> likes,
       String profileImage,
       String storiesImage,
-      String datePublished});
+      DateTime datePublished});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
       datePublished: null == datePublished
           ? _value.datePublished
           : datePublished // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ) as $Val);
   }
 }
@@ -127,7 +127,7 @@ abstract class _$$_StoriesModelCopyWith<$Res>
       List<dynamic> likes,
       String profileImage,
       String storiesImage,
-      String datePublished});
+      DateTime datePublished});
 }
 
 /// @nodoc
@@ -182,7 +182,7 @@ class __$$_StoriesModelCopyWithImpl<$Res>
       datePublished: null == datePublished
           ? _value.datePublished
           : datePublished // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -225,7 +225,7 @@ class _$_StoriesModel implements _StoriesModel {
   @override
   final String storiesImage;
   @override
-  final String datePublished;
+  final DateTime datePublished;
 
   @override
   String toString() {
@@ -288,7 +288,7 @@ abstract class _StoriesModel implements StoriesModel {
       required final List<dynamic> likes,
       required final String profileImage,
       required final String storiesImage,
-      required final String datePublished}) = _$_StoriesModel;
+      required final DateTime datePublished}) = _$_StoriesModel;
 
   factory _StoriesModel.fromJson(Map<String, dynamic> json) =
       _$_StoriesModel.fromJson;
@@ -308,7 +308,7 @@ abstract class _StoriesModel implements StoriesModel {
   @override
   String get storiesImage;
   @override
-  String get datePublished;
+  DateTime get datePublished;
   @override
   @JsonKey(ignore: true)
   _$$_StoriesModelCopyWith<_$_StoriesModel> get copyWith =>
