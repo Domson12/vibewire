@@ -5,8 +5,9 @@ import 'package:scoped_model/scoped_model.dart';
 
 import 'core/navigation/app_router.dart';
 import 'core/theme/app_theme.dart';
-import 'locale_model.dart';
+
 import 'generated/l10n.dart';
+import 'locale_selector.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);

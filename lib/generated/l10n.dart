@@ -469,6 +469,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Galeria`
+  String get gallery {
+    return Intl.message(
+      'Galeria',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kamera`
+  String get camera {
+    return Intl.message(
+      'Kamera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

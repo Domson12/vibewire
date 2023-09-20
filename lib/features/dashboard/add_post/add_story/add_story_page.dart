@@ -1,3 +1,4 @@
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,30 +7,19 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../../../core/common/widget/app_elevated_button.dart';
 import '../../../../core/common/widget/app_form_field.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/utils/injection_container.dart';
 import '../../../../core/utils/validator.dart';
 import '../../../../generated/l10n.dart';
 import '../../../auth/cubit/auth_cubit.dart';
+import '../widget/photo_picker.dart';
 import 'cubit/add_story_cubit.dart';
 
 @RoutePage()
-class AddStoryPage extends HookWidget implements AutoRouteWrapper {
+class AddStoryPage extends HookWidget {
   AddStoryPage({super.key});
 
   final _formKey = GlobalKey<FormState>();
   late final _descriptionController = TextEditingController();
   late final _titleController = TextEditingController();
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<AuthCubit>(create: (context) => sl<AuthCubit>()),
-        BlocProvider<AddStoryCubit>(create: (context) => sl<AddStoryCubit>()),
-      ],
-      child: this,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,23 +44,35 @@ class AddStoryPage extends HookWidget implements AutoRouteWrapper {
                   validator: (value) => Validators.validateName(value, context),
                 ),
                 const SizedBox(height: 20),
-
-                //TODO: Image Picker
-
+                BlocBuilder<AddStoryCubit, AddStoryState>(
+                  builder: (context, state) {
+                    return PhotoPicker(
+                      onTap: () {
+                        context.read<AddStoryCubit>().showPicker(context);
+                      },
+                      isPhotoSelected: state.isPhotoSelected,
+                      imageBytes: state.imageBytes,
+                    );
+                  },
+                ),
                 const SizedBox(height: 40),
                 SizedBox(
                   width: double.maxFinite,
-                  child: AppElevatedButton(
-                    foregroundColor: AppColors.white,
-                    backgroundColor: AppColors.primary,
-                    child: Text(S.of(context).add_story),
-                    onPressed: () {
-                      if (_formKey.currentState?.validate() == true) {
-                        final uid = context.read<AuthCubit>().getUuid();
-                        // context
-                        //     .read<AddStoryCubit>()
-                        //     .addStory(file, uid, name, lastName, profileImage);
-                      }
+                  child: BlocBuilder<AddStoryCubit, AddStoryState>(
+                    builder: (context, state) {
+                      return AppElevatedButton(
+                        foregroundColor: AppColors.white,
+                        backgroundColor: AppColors.primary,
+                        child: Text(S.of(context).add_story),
+                        onPressed: () {
+                          if (_formKey.currentState?.validate() == true) {
+                            final uid = context.read<AuthCubit>().getUuid();
+                            // context
+                            //     .read<AddStoryCubit>()
+                            //     .addStory(state.imageBytes.toString(), uid, , lastName, profileImage);
+                          }
+                        },
+                      );
                     },
                   ),
                 ),

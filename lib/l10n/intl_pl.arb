@@ -46,5 +46,7 @@
   "description": "Opis",
   "title": "Tytuł",
   "add_main_post": "Dodaj główny post",
-  "change_locale": "zmień język"
+  "change_locale": "zmień język",
+  "gallery": "Galeria",
+  "camera": "Kamera"
 }

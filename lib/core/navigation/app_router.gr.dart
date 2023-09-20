@@ -18,13 +18,13 @@ abstract class _$AppRouter extends RootStackRouter {
     AddMainPostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const AddMainPostPage()),
+        child: const AddMainPostPage(),
       );
     },
     AddPostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AddPostPage(),
+        child: WrappedRoute(child: const AddPostPage()),
       );
     },
     AddStoryRoute.name: (routeData) {
@@ -32,7 +32,7 @@ abstract class _$AppRouter extends RootStackRouter {
           orElse: () => const AddStoryRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: AddStoryPage(key: args.key)),
+        child: AddStoryPage(key: args.key),
       );
     },
     AuthMainRoute.name: (routeData) {

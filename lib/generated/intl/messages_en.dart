@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add special characters"),
         "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
         "auth_social_text": m0,
+        "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "change_locale": MessageLookupByLibrary.simpleMessage("Change Locale"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -45,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Field can\'t be empty"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
         "have_account":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),

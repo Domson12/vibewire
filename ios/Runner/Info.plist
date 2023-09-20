@@ -67,9 +67,17 @@
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
-		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<key>UIApplicationSupportsIdirectInputEvents</key>
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSPhotoLibraryUsageDescription</key>
+            	<string>Photo library usage</string>
+        <key>NSCameraUsageDescription</key>
+                <string>camera usage</string>
+        <key>NSMicrophoneUsageDescription</key>
+                <string>microphone usage</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+                <string>This app needs access to location when open.</string>
 	</dict>
 </plist>

@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dodaj znaki specjalne"),
         "add_story": MessageLookupByLibrary.simpleMessage("Dodaj story"),
         "auth_social_text": m0,
+        "camera": MessageLookupByLibrary.simpleMessage("Kamera"),
         "change_locale": MessageLookupByLibrary.simpleMessage("zmień język"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Potwierdź hasło"),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pole nie może być puste"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Zapomniałeś hasła?"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Galeria"),
         "have_account": MessageLookupByLibrary.simpleMessage("Masz już konto?"),
         "home": MessageLookupByLibrary.simpleMessage("Strona główna"),
         "invalid_email":

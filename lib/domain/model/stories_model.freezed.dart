@@ -22,7 +22,7 @@ StoriesModel _$StoriesModelFromJson(Map<String, dynamic> json) {
 mixin _$StoriesModel {
   String get uid => throw _privateConstructorUsedError;
   String get storiesId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   List<dynamic> get likes => throw _privateConstructorUsedError;
   String get profileImage => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $StoriesModelCopyWith<$Res> {
   $Res call(
       {String uid,
       String storiesId,
-      String name,
+      String firstName,
       String lastName,
       List<dynamic> likes,
       String profileImage,
@@ -67,7 +67,7 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
   $Res call({
     Object? uid = null,
     Object? storiesId = null,
-    Object? name = null,
+    Object? firstName = null,
     Object? lastName = null,
     Object? likes = null,
     Object? profileImage = null,
@@ -83,9 +83,9 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
           ? _value.storiesId
           : storiesId // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -122,7 +122,7 @@ abstract class _$$_StoriesModelCopyWith<$Res>
   $Res call(
       {String uid,
       String storiesId,
-      String name,
+      String firstName,
       String lastName,
       List<dynamic> likes,
       String profileImage,
@@ -143,7 +143,7 @@ class __$$_StoriesModelCopyWithImpl<$Res>
   $Res call({
     Object? uid = null,
     Object? storiesId = null,
-    Object? name = null,
+    Object? firstName = null,
     Object? lastName = null,
     Object? likes = null,
     Object? profileImage = null,
@@ -159,9 +159,9 @@ class __$$_StoriesModelCopyWithImpl<$Res>
           ? _value.storiesId
           : storiesId // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -193,10 +193,10 @@ class _$_StoriesModel implements _StoriesModel {
   const _$_StoriesModel(
       {required this.uid,
       required this.storiesId,
-      required this.name,
+      required this.firstName,
       required this.lastName,
       required final List<dynamic> likes,
-      required this.profileImage,
+      this.profileImage = '',
       required this.storiesImage,
       required this.datePublished})
       : _likes = likes;
@@ -209,7 +209,7 @@ class _$_StoriesModel implements _StoriesModel {
   @override
   final String storiesId;
   @override
-  final String name;
+  final String firstName;
   @override
   final String lastName;
   final List<dynamic> _likes;
@@ -221,6 +221,7 @@ class _$_StoriesModel implements _StoriesModel {
   }
 
   @override
+  @JsonKey()
   final String profileImage;
   @override
   final String storiesImage;
@@ -229,7 +230,7 @@ class _$_StoriesModel implements _StoriesModel {
 
   @override
   String toString() {
-    return 'StoriesModel(uid: $uid, storiesId: $storiesId, name: $name, lastName: $lastName, likes: $likes, profileImage: $profileImage, storiesImage: $storiesImage, datePublished: $datePublished)';
+    return 'StoriesModel(uid: $uid, storiesId: $storiesId, firstName: $firstName, lastName: $lastName, likes: $likes, profileImage: $profileImage, storiesImage: $storiesImage, datePublished: $datePublished)';
   }
 
   @override
@@ -240,7 +241,8 @@ class _$_StoriesModel implements _StoriesModel {
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.storiesId, storiesId) ||
                 other.storiesId == storiesId) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             const DeepCollectionEquality().equals(other._likes, _likes) &&
@@ -258,7 +260,7 @@ class _$_StoriesModel implements _StoriesModel {
       runtimeType,
       uid,
       storiesId,
-      name,
+      firstName,
       lastName,
       const DeepCollectionEquality().hash(_likes),
       profileImage,
@@ -283,10 +285,10 @@ abstract class _StoriesModel implements StoriesModel {
   const factory _StoriesModel(
       {required final String uid,
       required final String storiesId,
-      required final String name,
+      required final String firstName,
       required final String lastName,
       required final List<dynamic> likes,
-      required final String profileImage,
+      final String profileImage,
       required final String storiesImage,
       required final DateTime datePublished}) = _$_StoriesModel;
 
@@ -298,7 +300,7 @@ abstract class _StoriesModel implements StoriesModel {
   @override
   String get storiesId;
   @override
-  String get name;
+  String get firstName;
   @override
   String get lastName;
   @override

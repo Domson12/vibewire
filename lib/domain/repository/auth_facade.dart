@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 
 import '../model/register_model.dart';
 
@@ -22,5 +21,5 @@ abstract class IAuthFacade {
 
   Future<void> logOut();
 
-  Future<void> addPhotoToStorage(String childName, Uint8List file, bool isPost);
+  Future<void> addPhotoToStorage(String childName, String file, bool isPost);
 }

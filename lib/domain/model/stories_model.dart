@@ -9,10 +9,10 @@ class StoriesModel with _$StoriesModel {
   const factory StoriesModel({
     required String uid,
     required String storiesId,
-    required String name,
+    required String firstName,
     required String lastName,
     required List likes,
-    required String profileImage,
+    @Default('') String profileImage,
     required String storiesImage,
     required DateTime datePublished,
   }) = _StoriesModel;

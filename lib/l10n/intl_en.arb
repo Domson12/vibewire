@@ -44,5 +44,7 @@
   "description": "Description",
   "title": "Title",
   "add_main_post": "Add Main Post",
-  "change_locale": "Change Locale"
+  "change_locale": "Change Locale",
+  "gallery": "Gallery",
+  "camera": "Camera"
 }
