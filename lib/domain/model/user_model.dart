@@ -14,6 +14,7 @@ class UserModel with _$UserModel {
     required String profileImage,
     required List followers,
     required List following,
+    required List likes,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>

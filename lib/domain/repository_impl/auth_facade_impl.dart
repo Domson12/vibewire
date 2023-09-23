@@ -49,6 +49,7 @@ class AuthFacadeImpl implements IAuthFacade {
     required String profileImage,
     required List<int> followers,
     required List<int> following,
+    required List<int> likes,
   }) async {
     UserCredential credentials =
         await _firebaseAuth.createUserWithEmailAndPassword(
@@ -64,6 +65,7 @@ class AuthFacadeImpl implements IAuthFacade {
       profileImage: profileImage,
       followers: followers,
       following: following,
+      likes: likes,
     );
 
     await _firestore

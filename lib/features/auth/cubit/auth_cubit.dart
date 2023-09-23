@@ -51,6 +51,7 @@ class AuthCubit extends Cubit<AuthState> {
         profileImage: '',
         followers: [],
         following: [],
+        likes: [],
       );
       emit(state.copyWith(isLoading: false));
     } on FirebaseAuthException catch (e) {

@@ -10,6 +10,7 @@ class ProfileState with _$ProfileState {
     @Default('') String bio,
     @Default('') String profileImage,
     @Default(0) int followers,
+    @Default(0) int likes,
     @Default(0) int following,
     @Default(0) int postLen,
     @Default('') String errorMessage,

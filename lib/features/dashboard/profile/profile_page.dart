@@ -14,7 +14,6 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
     super.key,
   });
 
-
   @override
   Widget wrappedRoute(BuildContext context) {
     return MultiBlocProvider(
@@ -41,9 +40,15 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
             firstName: state.firstName,
             lastName: state.lastName,
             bio: state.bio,
+            postsNumber: state.postLen.toString(),
+            followersNumber: state.followers.toString(),
+            likesNumber: state.likes.toString(),
             buttonText: 'log Out',
             onPressed: () {
               context.read<ProfileCubit>().signOut();
+            },
+            onTapIcon: () {
+              //TODO: profile edit page
             },
           );
         },

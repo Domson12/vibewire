@@ -7,7 +7,7 @@ class ProfileData extends StatelessWidget {
   const ProfileData({super.key, required this.text, required this.dataText});
 
   final String text;
-  final int dataText;
+  final String dataText;
 
   @override
   Widget build(BuildContext context) {

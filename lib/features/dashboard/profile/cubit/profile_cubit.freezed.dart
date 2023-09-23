@@ -23,6 +23,7 @@ mixin _$ProfileState {
   String get bio => throw _privateConstructorUsedError;
   String get profileImage => throw _privateConstructorUsedError;
   int get followers => throw _privateConstructorUsedError;
+  int get likes => throw _privateConstructorUsedError;
   int get following => throw _privateConstructorUsedError;
   int get postLen => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
@@ -46,6 +47,7 @@ abstract class $ProfileStateCopyWith<$Res> {
       String bio,
       String profileImage,
       int followers,
+      int likes,
       int following,
       int postLen,
       String errorMessage});
@@ -71,6 +73,7 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
     Object? bio = null,
     Object? profileImage = null,
     Object? followers = null,
+    Object? likes = null,
     Object? following = null,
     Object? postLen = null,
     Object? errorMessage = null,
@@ -104,6 +107,10 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
           ? _value.followers
           : followers // ignore: cast_nullable_to_non_nullable
               as int,
+      likes: null == likes
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as int,
       following: null == following
           ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
@@ -136,6 +143,7 @@ abstract class _$$_ProfileStateCopyWith<$Res>
       String bio,
       String profileImage,
       int followers,
+      int likes,
       int following,
       int postLen,
       String errorMessage});
@@ -159,6 +167,7 @@ class __$$_ProfileStateCopyWithImpl<$Res>
     Object? bio = null,
     Object? profileImage = null,
     Object? followers = null,
+    Object? likes = null,
     Object? following = null,
     Object? postLen = null,
     Object? errorMessage = null,
@@ -192,6 +201,10 @@ class __$$_ProfileStateCopyWithImpl<$Res>
           ? _value.followers
           : followers // ignore: cast_nullable_to_non_nullable
               as int,
+      likes: null == likes
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as int,
       following: null == following
           ? _value.following
           : following // ignore: cast_nullable_to_non_nullable
@@ -219,6 +232,7 @@ class _$_ProfileState implements _ProfileState {
       this.bio = '',
       this.profileImage = '',
       this.followers = 0,
+      this.likes = 0,
       this.following = 0,
       this.postLen = 0,
       this.errorMessage = ''});
@@ -246,6 +260,9 @@ class _$_ProfileState implements _ProfileState {
   final int followers;
   @override
   @JsonKey()
+  final int likes;
+  @override
+  @JsonKey()
   final int following;
   @override
   @JsonKey()
@@ -256,7 +273,7 @@ class _$_ProfileState implements _ProfileState {
 
   @override
   String toString() {
-    return 'ProfileState(isLoading: $isLoading, isError: $isError, firstName: $firstName, lastName: $lastName, bio: $bio, profileImage: $profileImage, followers: $followers, following: $following, postLen: $postLen, errorMessage: $errorMessage)';
+    return 'ProfileState(isLoading: $isLoading, isError: $isError, firstName: $firstName, lastName: $lastName, bio: $bio, profileImage: $profileImage, followers: $followers, likes: $likes, following: $following, postLen: $postLen, errorMessage: $errorMessage)';
   }
 
   @override
@@ -276,6 +293,7 @@ class _$_ProfileState implements _ProfileState {
                 other.profileImage == profileImage) &&
             (identical(other.followers, followers) ||
                 other.followers == followers) &&
+            (identical(other.likes, likes) || other.likes == likes) &&
             (identical(other.following, following) ||
                 other.following == following) &&
             (identical(other.postLen, postLen) || other.postLen == postLen) &&
@@ -284,8 +302,19 @@ class _$_ProfileState implements _ProfileState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isError, firstName,
-      lastName, bio, profileImage, followers, following, postLen, errorMessage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      isError,
+      firstName,
+      lastName,
+      bio,
+      profileImage,
+      followers,
+      likes,
+      following,
+      postLen,
+      errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -303,6 +332,7 @@ abstract class _ProfileState implements ProfileState {
       final String bio,
       final String profileImage,
       final int followers,
+      final int likes,
       final int following,
       final int postLen,
       final String errorMessage}) = _$_ProfileState;
@@ -321,6 +351,8 @@ abstract class _ProfileState implements ProfileState {
   String get profileImage;
   @override
   int get followers;
+  @override
+  int get likes;
   @override
   int get following;
   @override

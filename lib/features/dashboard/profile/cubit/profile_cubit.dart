@@ -42,6 +42,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         profileImage: user.profileImage,
         followers: user.followers.length,
         following: user.following.length,
+        likes: user.likes.length,
       ));
     } catch (e) {
       emit(

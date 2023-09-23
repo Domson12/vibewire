@@ -10,6 +10,7 @@ abstract class IAuthFacade {
     required String password,
     required String bio,
     required String profileImage,
+    required List<int> likes,
     required List<int> followers,
     required List<int> following,
   });
