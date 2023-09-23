@@ -5,6 +5,14 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 class Validators {
+
+  static String? validateEmptyField(String? value, BuildContext context) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).empty_field;
+    }
+    return null;
+  }
+
   static String? validateEmail(String? value, BuildContext context) {
     if (value == null || value.isEmpty) {
       return S.of(context).empty_field;

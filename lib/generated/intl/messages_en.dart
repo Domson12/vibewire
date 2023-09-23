@@ -28,8 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add capital letters"),
         "add_lowercase":
             MessageLookupByLibrary.simpleMessage("Add lowercase letters"),
-        "add_main_post": MessageLookupByLibrary.simpleMessage("Add Main Post"),
         "add_numbers": MessageLookupByLibrary.simpleMessage("Add numbers"),
+        "add_post": MessageLookupByLibrary.simpleMessage("Add Post"),
         "add_special_char":
             MessageLookupByLibrary.simpleMessage("Add special characters"),
         "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
@@ -38,12 +38,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "change_locale": MessageLookupByLibrary.simpleMessage("Change Locale"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
-        "daily_new": MessageLookupByLibrary.simpleMessage("Daily New"),
+        "daily_new": MessageLookupByLibrary.simpleMessage("Daily News"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "discover": MessageLookupByLibrary.simpleMessage("Discover"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "empty_field":
             MessageLookupByLibrary.simpleMessage("Field can\'t be empty"),
+        "followers": MessageLookupByLibrary.simpleMessage("Followers"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalid_phone": MessageLookupByLibrary.simpleMessage(
             "Invalid Phone Number, must be 9 digits (Polish number))"),
         "latest": MessageLookupByLibrary.simpleMessage("Latest"),
+        "likes": MessageLookupByLibrary.simpleMessage("Likes"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "meet_new_friend": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Passwords are not the same"),
         "password_too_short":
             MessageLookupByLibrary.simpleMessage("Password is too short"),
+        "posts": MessageLookupByLibrary.simpleMessage("Posts"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "reset_password":

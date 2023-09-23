@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../gen/assets.gen.dart';
 import '../../../generated/l10n.dart';
 import 'daily_new/daily_new_page.dart';
 import 'discover/discover_page.dart';
@@ -25,7 +24,6 @@ class HomePage extends StatelessWidget {
             preferredSize: const Size.fromHeight(100),
             child: CustomAppBar(
               searchController: searchController,
-              profileImage: Assets.images.human1.path,
               bottom: TabBar(
                 isScrollable: true,
                 indicatorColor: Colors.transparent,

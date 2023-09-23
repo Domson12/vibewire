@@ -8,7 +8,8 @@ part 'register_model.g.dart';
 class RegisterModel with _$RegisterModel {
   const factory RegisterModel({
     required String? id,
-    required String name,
+    @Default('') String profileImage,
+    required String firstName,
     required String lastName,
     required String email,
   }) = _RegisterModel;

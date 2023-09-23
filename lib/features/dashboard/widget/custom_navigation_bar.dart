@@ -32,7 +32,7 @@ class CustomNavigationBar extends StatelessWidget {
           elevation: 2,
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items:  [
+          items: [
             BottomNavigationBarItem(
               backgroundColor: AppColors.primary,
               icon: const Icon(Ionicons.home_outline),

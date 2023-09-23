@@ -12,10 +12,7 @@ class StoriesAvatar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(
-          color: AppColors.primary,
-          width: 2,
-        ),
+        border: Border.all(color: AppColors.primary, width: 2),
       ),
       child: Padding(
         padding: const EdgeInsets.all(2.0),

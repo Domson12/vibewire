@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'stories_model.dart';
+part of 'post_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,50 +14,51 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-StoriesModel _$StoriesModelFromJson(Map<String, dynamic> json) {
-  return _StoriesModel.fromJson(json);
+PostModel _$PostModelFromJson(Map<String, dynamic> json) {
+  return _PostModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$StoriesModel {
+mixin _$PostModel {
   String get uid => throw _privateConstructorUsedError;
-  String get storiesId => throw _privateConstructorUsedError;
+  String get postId => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   List<dynamic> get likes => throw _privateConstructorUsedError;
   String get profileImage => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get storiesImage => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get postImage => throw _privateConstructorUsedError;
   DateTime get datePublished => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StoriesModelCopyWith<StoriesModel> get copyWith =>
+  $PostModelCopyWith<PostModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoriesModelCopyWith<$Res> {
-  factory $StoriesModelCopyWith(
-          StoriesModel value, $Res Function(StoriesModel) then) =
-      _$StoriesModelCopyWithImpl<$Res, StoriesModel>;
+abstract class $PostModelCopyWith<$Res> {
+  factory $PostModelCopyWith(PostModel value, $Res Function(PostModel) then) =
+      _$PostModelCopyWithImpl<$Res, PostModel>;
   @useResult
   $Res call(
       {String uid,
-      String storiesId,
+      String postId,
       String firstName,
       String lastName,
       List<dynamic> likes,
       String profileImage,
       String title,
-      String storiesImage,
+      String description,
+      String postImage,
       DateTime datePublished});
 }
 
 /// @nodoc
-class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
-    implements $StoriesModelCopyWith<$Res> {
-  _$StoriesModelCopyWithImpl(this._value, this._then);
+class _$PostModelCopyWithImpl<$Res, $Val extends PostModel>
+    implements $PostModelCopyWith<$Res> {
+  _$PostModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -68,13 +69,14 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
   @override
   $Res call({
     Object? uid = null,
-    Object? storiesId = null,
+    Object? postId = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? likes = null,
     Object? profileImage = null,
     Object? title = null,
-    Object? storiesImage = null,
+    Object? description = null,
+    Object? postImage = null,
     Object? datePublished = null,
   }) {
     return _then(_value.copyWith(
@@ -82,9 +84,9 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      storiesId: null == storiesId
-          ? _value.storiesId
-          : storiesId // ignore: cast_nullable_to_non_nullable
+      postId: null == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
               as String,
       firstName: null == firstName
           ? _value.firstName
@@ -106,9 +108,13 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      storiesImage: null == storiesImage
-          ? _value.storiesImage
-          : storiesImage // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      postImage: null == postImage
+          ? _value.postImage
+          : postImage // ignore: cast_nullable_to_non_nullable
               as String,
       datePublished: null == datePublished
           ? _value.datePublished
@@ -119,54 +125,55 @@ class _$StoriesModelCopyWithImpl<$Res, $Val extends StoriesModel>
 }
 
 /// @nodoc
-abstract class _$$_StoriesModelCopyWith<$Res>
-    implements $StoriesModelCopyWith<$Res> {
-  factory _$$_StoriesModelCopyWith(
-          _$_StoriesModel value, $Res Function(_$_StoriesModel) then) =
-      __$$_StoriesModelCopyWithImpl<$Res>;
+abstract class _$$_PostModelCopyWith<$Res> implements $PostModelCopyWith<$Res> {
+  factory _$$_PostModelCopyWith(
+          _$_PostModel value, $Res Function(_$_PostModel) then) =
+      __$$_PostModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String uid,
-      String storiesId,
+      String postId,
       String firstName,
       String lastName,
       List<dynamic> likes,
       String profileImage,
       String title,
-      String storiesImage,
+      String description,
+      String postImage,
       DateTime datePublished});
 }
 
 /// @nodoc
-class __$$_StoriesModelCopyWithImpl<$Res>
-    extends _$StoriesModelCopyWithImpl<$Res, _$_StoriesModel>
-    implements _$$_StoriesModelCopyWith<$Res> {
-  __$$_StoriesModelCopyWithImpl(
-      _$_StoriesModel _value, $Res Function(_$_StoriesModel) _then)
+class __$$_PostModelCopyWithImpl<$Res>
+    extends _$PostModelCopyWithImpl<$Res, _$_PostModel>
+    implements _$$_PostModelCopyWith<$Res> {
+  __$$_PostModelCopyWithImpl(
+      _$_PostModel _value, $Res Function(_$_PostModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? uid = null,
-    Object? storiesId = null,
+    Object? postId = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? likes = null,
     Object? profileImage = null,
     Object? title = null,
-    Object? storiesImage = null,
+    Object? description = null,
+    Object? postImage = null,
     Object? datePublished = null,
   }) {
-    return _then(_$_StoriesModel(
+    return _then(_$_PostModel(
       uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      storiesId: null == storiesId
-          ? _value.storiesId
-          : storiesId // ignore: cast_nullable_to_non_nullable
+      postId: null == postId
+          ? _value.postId
+          : postId // ignore: cast_nullable_to_non_nullable
               as String,
       firstName: null == firstName
           ? _value.firstName
@@ -188,9 +195,13 @@ class __$$_StoriesModelCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      storiesImage: null == storiesImage
-          ? _value.storiesImage
-          : storiesImage // ignore: cast_nullable_to_non_nullable
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      postImage: null == postImage
+          ? _value.postImage
+          : postImage // ignore: cast_nullable_to_non_nullable
               as String,
       datePublished: null == datePublished
           ? _value.datePublished
@@ -202,26 +213,27 @@ class __$$_StoriesModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StoriesModel implements _StoriesModel {
-  const _$_StoriesModel(
+class _$_PostModel implements _PostModel {
+  const _$_PostModel(
       {required this.uid,
-      required this.storiesId,
+      required this.postId,
       required this.firstName,
       required this.lastName,
       required final List<dynamic> likes,
       this.profileImage = '',
       required this.title,
-      required this.storiesImage,
+      required this.description,
+      required this.postImage,
       required this.datePublished})
       : _likes = likes;
 
-  factory _$_StoriesModel.fromJson(Map<String, dynamic> json) =>
-      _$$_StoriesModelFromJson(json);
+  factory _$_PostModel.fromJson(Map<String, dynamic> json) =>
+      _$$_PostModelFromJson(json);
 
   @override
   final String uid;
   @override
-  final String storiesId;
+  final String postId;
   @override
   final String firstName;
   @override
@@ -240,23 +252,24 @@ class _$_StoriesModel implements _StoriesModel {
   @override
   final String title;
   @override
-  final String storiesImage;
+  final String description;
+  @override
+  final String postImage;
   @override
   final DateTime datePublished;
 
   @override
   String toString() {
-    return 'StoriesModel(uid: $uid, storiesId: $storiesId, firstName: $firstName, lastName: $lastName, likes: $likes, profileImage: $profileImage, title: $title, storiesImage: $storiesImage, datePublished: $datePublished)';
+    return 'PostModel(uid: $uid, postId: $postId, firstName: $firstName, lastName: $lastName, likes: $likes, profileImage: $profileImage, title: $title, description: $description, postImage: $postImage, datePublished: $datePublished)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StoriesModel &&
+            other is _$_PostModel &&
             (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.storiesId, storiesId) ||
-                other.storiesId == storiesId) &&
+            (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -265,8 +278,10 @@ class _$_StoriesModel implements _StoriesModel {
             (identical(other.profileImage, profileImage) ||
                 other.profileImage == profileImage) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.storiesImage, storiesImage) ||
-                other.storiesImage == storiesImage) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.postImage, postImage) ||
+                other.postImage == postImage) &&
             (identical(other.datePublished, datePublished) ||
                 other.datePublished == datePublished));
   }
@@ -276,48 +291,50 @@ class _$_StoriesModel implements _StoriesModel {
   int get hashCode => Object.hash(
       runtimeType,
       uid,
-      storiesId,
+      postId,
       firstName,
       lastName,
       const DeepCollectionEquality().hash(_likes),
       profileImage,
       title,
-      storiesImage,
+      description,
+      postImage,
       datePublished);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StoriesModelCopyWith<_$_StoriesModel> get copyWith =>
-      __$$_StoriesModelCopyWithImpl<_$_StoriesModel>(this, _$identity);
+  _$$_PostModelCopyWith<_$_PostModel> get copyWith =>
+      __$$_PostModelCopyWithImpl<_$_PostModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StoriesModelToJson(
+    return _$$_PostModelToJson(
       this,
     );
   }
 }
 
-abstract class _StoriesModel implements StoriesModel {
-  const factory _StoriesModel(
+abstract class _PostModel implements PostModel {
+  const factory _PostModel(
       {required final String uid,
-      required final String storiesId,
+      required final String postId,
       required final String firstName,
       required final String lastName,
       required final List<dynamic> likes,
       final String profileImage,
       required final String title,
-      required final String storiesImage,
-      required final DateTime datePublished}) = _$_StoriesModel;
+      required final String description,
+      required final String postImage,
+      required final DateTime datePublished}) = _$_PostModel;
 
-  factory _StoriesModel.fromJson(Map<String, dynamic> json) =
-      _$_StoriesModel.fromJson;
+  factory _PostModel.fromJson(Map<String, dynamic> json) =
+      _$_PostModel.fromJson;
 
   @override
   String get uid;
   @override
-  String get storiesId;
+  String get postId;
   @override
   String get firstName;
   @override
@@ -329,11 +346,13 @@ abstract class _StoriesModel implements StoriesModel {
   @override
   String get title;
   @override
-  String get storiesImage;
+  String get description;
+  @override
+  String get postImage;
   @override
   DateTime get datePublished;
   @override
   @JsonKey(ignore: true)
-  _$$_StoriesModelCopyWith<_$_StoriesModel> get copyWith =>
+  _$$_PostModelCopyWith<_$_PostModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -350,10 +350,10 @@ class S {
     );
   }
 
-  /// `nowe`
+  /// `newsy dnia`
   String get daily_new {
     return Intl.message(
-      'nowe',
+      'newsy dnia',
       name: 'daily_new',
       desc: '',
       args: [],
@@ -450,16 +450,6 @@ class S {
     );
   }
 
-  /// `Dodaj główny post`
-  String get add_main_post {
-    return Intl.message(
-      'Dodaj główny post',
-      name: 'add_main_post',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `zmień język`
   String get change_locale {
     return Intl.message(
@@ -485,6 +475,36 @@ class S {
     return Intl.message(
       'Kamera',
       name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Obserwujący`
+  String get followers {
+    return Intl.message(
+      'Obserwujący',
+      name: 'followers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Polubienia`
+  String get likes {
+    return Intl.message(
+      'Polubienia',
+      name: 'likes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posty`
+  String get posts {
+    return Intl.message(
+      'Posty',
+      name: 'posts',
       desc: '',
       args: [],
     );

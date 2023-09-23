@@ -45,8 +45,10 @@
   "add_post": "إضافة منشور",
   "description": "وصف",
   "title": "عنوان",
-  "add_main_post": "إضافة منشور رئيسي",
   "change_locale": "تغيير اللغة",
   "gallery": "صالة عرض",
-  "camera": "آلة تصوير"
+  "camera": "آلة تصوير",
+  "followers": "متابعون",
+  "likes": "إعجابات",
+  "posts": "المشاركات"
 }

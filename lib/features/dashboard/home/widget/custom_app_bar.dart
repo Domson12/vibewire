@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/app_colors.dart';
+import '../../../../gen/assets.gen.dart';
 import 'custom_search_bar.dart';
 
-//custom app bar
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.searchController,
-    required this.profileImage,
+    this.profileImage,
     this.bottom,
   }) : super(key: key);
 
   final TextEditingController searchController;
   final PreferredSizeWidget? bottom;
-  final String profileImage;
+  final String? profileImage;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           CircleAvatar(
             radius: 20,
-            backgroundColor: Colors.grey,
-            foregroundImage: AssetImage(profileImage),
+            backgroundColor: AppColors.grey,
+            foregroundImage: AssetImage(
+              profileImage ?? Assets.images.human1.path,
+            ),
+            foregroundColor: AppColors.grey,
           ),
         ],
       ),

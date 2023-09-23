@@ -2,15 +2,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
-import 'package:uuid/uuid.dart';
 
-import '../../../../../domain/model/stories_model.dart';
-import '../../../../../domain/repository_impl/auth_facade_impl.dart';
+import '../../../../../domain/repository_impl/post_repository_impl.dart';
 import '../../../../../generated/l10n.dart';
 
 part 'add_story_state.dart';
@@ -19,11 +16,9 @@ part 'add_story_cubit.freezed.dart';
 
 @injectable
 class AddStoryCubit extends Cubit<AddStoryState> {
-  AddStoryCubit(this._firestore, this._authFacadeImpl)
-      : super(const AddStoryState());
+  AddStoryCubit(this._postRepositoryImpl) : super(const AddStoryState());
 
-  final FirebaseFirestore _firestore;
-  final AuthFacadeImpl _authFacadeImpl;
+  final PostRepositoryImpl _postRepositoryImpl;
 
   Future<void> _imagePicker(ImageSource source) async {
     emit(state.copyWith(isLoading: true));
@@ -76,33 +71,19 @@ class AddStoryCubit extends Cubit<AddStoryState> {
     String firstName,
     String lastName,
     String? profileImage,
+    String title,
   ) async {
     emit(state.copyWith(isLoading: true));
 
     try {
-      String photoUrl = await _authFacadeImpl.addPhotoToStorage(
-        'stories',
+      _postRepositoryImpl.addStory(
         file,
-        true,
+        uid,
+        firstName,
+        lastName,
+        profileImage,
+        title,
       );
-
-      String storyId = const Uuid().v1();
-
-      final storiesModel = StoriesModel(
-        uid: uid,
-        storiesId: storyId,
-        firstName: firstName,
-        lastName: lastName,
-        likes: [],
-        storiesImage: photoUrl,
-        datePublished: DateTime.now(),
-      );
-
-      await _firestore
-          .collection('stories')
-          .doc(storyId)
-          .set(storiesModel.toJson());
-
       emit(state.copyWith(isLoading: false, isSuccess: true));
     } catch (e) {
       emit(

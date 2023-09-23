@@ -35,7 +35,7 @@
   "trending": "na czasie",
   "latest": "najnowsze",
   "discover": "Odkryj",
-  "daily_new": "nowe",
+  "daily_new": "newsy dnia",
   "profile": "Profil",
   "notification": "Powiadomienia",
   "message": "Wiadomości",
@@ -45,8 +45,10 @@
   "add_post": "Dodaj post",
   "description": "Opis",
   "title": "Tytuł",
-  "add_main_post": "Dodaj główny post",
   "change_locale": "zmień język",
   "gallery": "Galeria",
-  "camera": "Kamera"
+  "camera": "Kamera",
+  "followers": "Obserwujący",
+  "likes": "Polubienia",
+  "posts": "Posty"
 }

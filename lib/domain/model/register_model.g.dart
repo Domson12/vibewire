@@ -9,7 +9,8 @@ part of 'register_model.dart';
 _$_RegisterModel _$$_RegisterModelFromJson(Map<String, dynamic> json) =>
     _$_RegisterModel(
       id: json['id'] as String?,
-      name: json['name'] as String,
+      profileImage: json['profileImage'] as String? ?? '',
+      firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       email: json['email'] as String,
     );
@@ -17,7 +18,8 @@ _$_RegisterModel _$$_RegisterModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_RegisterModelToJson(_$_RegisterModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
+      'profileImage': instance.profileImage,
+      'firstName': instance.firstName,
       'lastName': instance.lastName,
       'email': instance.email,
     };

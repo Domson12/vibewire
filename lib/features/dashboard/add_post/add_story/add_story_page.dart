@@ -1,4 +1,3 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +17,6 @@ class AddStoryPage extends HookWidget {
   AddStoryPage({super.key});
 
   final _formKey = GlobalKey<FormState>();
-  late final _descriptionController = TextEditingController();
   late final _titleController = TextEditingController();
 
   @override
@@ -38,15 +36,11 @@ class AddStoryPage extends HookWidget {
                   validator: (value) => Validators.validateName(value, context),
                 ),
                 const SizedBox(height: 20),
-                AppFormField(
-                  labelText: S.of(context).description,
-                  controller: _descriptionController,
-                  validator: (value) => Validators.validateName(value, context),
-                ),
-                const SizedBox(height: 20),
                 BlocBuilder<AddStoryCubit, AddStoryState>(
                   builder: (context, state) {
                     return PhotoPicker(
+                      validator: (value) =>
+                          Validators.validateEmptyField(value, context),
                       onTap: () {
                         context.read<AddStoryCubit>().showPicker(context);
                       },

@@ -6,7 +6,7 @@ class AddMainState with _$AddMainState {
     Uint8List? imageBytes,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccess,
-    @Default(false) bool isFailure,
+    @Default(false) bool isError,
     @Default(false) bool isPhotoSelected,
     @Default('') String errorMessage,
   }) = _AddMainState;

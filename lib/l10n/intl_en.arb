@@ -34,7 +34,7 @@
   "trending": "Trending",
   "latest": "Latest",
   "discover": "Discover",
-  "daily_new": "Daily New",
+  "daily_new": "Daily News",
   "profile": "Profile",
   "notification": "Notification",
   "message": "Message",
@@ -43,8 +43,11 @@
   "add_story": "Add Story",
   "description": "Description",
   "title": "Title",
-  "add_main_post": "Add Main Post",
+  "add_post": "Add Post",
   "change_locale": "Change Locale",
   "gallery": "Gallery",
-  "camera": "Camera"
+  "camera": "Camera",
+  "followers": "Followers",
+  "likes": "Likes",
+  "posts": "Posts"
 }

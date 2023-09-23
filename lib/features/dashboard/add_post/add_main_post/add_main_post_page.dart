@@ -10,6 +10,7 @@ import '../../../../generated/l10n.dart';
 import '../../../auth/cubit/auth_cubit.dart';
 import '../add_story/cubit/add_story_cubit.dart';
 import '../widget/photo_picker.dart';
+import 'cubit/add_main_cubit.dart';
 
 @RoutePage()
 class AddMainPostPage extends StatefulWidget {
@@ -50,6 +51,8 @@ class _AddMainPostPageState extends State<AddMainPostPage> {
                 BlocBuilder<AddStoryCubit, AddStoryState>(
                   builder: (context, state) {
                     return PhotoPicker(
+                      validator: (value) =>
+                          Validators.validateEmptyField(value, context),
                       onTap: () {
                         context.read<AddStoryCubit>().showPicker(context);
                       },
@@ -61,15 +64,24 @@ class _AddMainPostPageState extends State<AddMainPostPage> {
                 const SizedBox(height: 40),
                 SizedBox(
                   width: double.maxFinite,
-                  child: BlocBuilder<AddStoryCubit, AddStoryState>(
+                  child: BlocBuilder<AddMainCubit, AddMainState>(
                     builder: (context, state) {
                       return AppElevatedButton(
                         foregroundColor: AppColors.white,
                         backgroundColor: AppColors.primary,
-                        child: Text(S.of(context).add_story),
+                        child: Text(S.of(context).add_post),
                         onPressed: () {
                           if (_formKey.currentState?.validate() == true) {
                             final uid = context.read<AuthCubit>().getUuid();
+                            context.read<AddMainCubit>().addMainPost(
+                                  state.imageBytes.toString(),
+                                  uid,
+                                  'firstName',
+                                  'lastName',
+                                  'profileImage',
+                                  _titleController.text,
+                                  _descriptionController.text,
+                                );
                           }
                         },
                       );

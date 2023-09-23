@@ -79,5 +79,7 @@
                 <string>microphone usage</string>
         <key>NSLocationWhenInUseUsageDescription</key>
                 <string>This app needs access to location when open.</string>
-	</dict>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+</dict>
 </plist>

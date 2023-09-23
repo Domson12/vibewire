@@ -13,6 +13,7 @@ class StoriesModel with _$StoriesModel {
     required String lastName,
     required List likes,
     @Default('') String profileImage,
+    required String title,
     required String storiesImage,
     required DateTime datePublished,
   }) = _StoriesModel;

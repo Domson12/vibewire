@@ -30,24 +30,27 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-
   String getUuid() {
     return _authFacadeImpl.getUid();
   }
 
   Future<void> register({
+    required String firstName,
+    required String lastName,
     required String email,
     required String password,
-    required String name,
-    required String lastName,
   }) async {
     emit(state.copyWith(isLoading: true));
     try {
       await _authFacadeImpl.register(
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         password: password,
-        name: name,
-        lastName: lastName,
+        bio: '',
+        profileImage: '',
+        followers: [],
+        following: [],
       );
       emit(state.copyWith(isLoading: false));
     } on FirebaseAuthException catch (e) {
