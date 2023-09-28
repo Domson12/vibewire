@@ -3,8 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:uuid/uuid.dart';
 
-import '../model/register_model.dart';
+import '../model/comment_model.dart';
+import '../model/credentials_model.dart';
+import '../model/user_model.dart';
 import '../repository/auth_facade.dart';
 
 @lazySingleton
@@ -25,9 +28,12 @@ class AuthFacadeImpl implements IAuthFacade {
   final FirebaseFirestore _firestore;
 
   @override
-  Future<RegisterModel?> getUser() {
-    //TODO: implement getUser
-    throw UnimplementedError();
+  Future<UserModel?> getUserData() {
+    return _firestore
+        .collection('users')
+        .doc(_firebaseAuth.currentUser!.uid)
+        .get()
+        .then((value) => UserModel.fromJson(value.data()!));
   }
 
   @override
@@ -37,27 +43,27 @@ class AuthFacadeImpl implements IAuthFacade {
 
   @override
   Future<void> register({
-    required String email,
-    required String password,
-    required String name,
-    required String lastName,
+    required UserModel userModel,
+    required CredentialsModel credentialsModel,
   }) async {
-    //create user
     UserCredential credentials =
         await _firebaseAuth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
+      email: credentialsModel.email,
+      password: credentialsModel.password,
     );
 
-    //create user model
-    RegisterModel user = RegisterModel(
-      id: credentials.user?.uid,
-      email: email,
-      name: name,
-      lastName: lastName,
+    UserModel user = UserModel(
+      uid: credentials.user!.uid,
+      firstName: userModel.firstName,
+      lastName: userModel.lastName,
+      bio: userModel.bio,
+      profileImage: userModel.profileImage,
+      followers: userModel.followers,
+      following: userModel.following,
+      likes: userModel.likes,
+      posts: userModel.posts,
     );
 
-    //save user to firestore
     await _firestore
         .collection('users')
         .doc(credentials.user?.uid)
@@ -65,40 +71,64 @@ class AuthFacadeImpl implements IAuthFacade {
   }
 
   @override
-  Future<void> signIn({required String email, required String password}) {
+  Future<void> signIn({required CredentialsModel credentialsModel}) {
     return _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
+      email: credentialsModel.email,
+      password: credentialsModel.password,
     );
   }
 
   @override
   Future<void> googleSignIn() async {
+    final googleSignIn = _googleSignIn;
+    final googleUser = await googleSignIn.signIn();
+    if (googleUser == null) return;
+    final googleAuth = await googleUser.authentication;
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    await _firebaseAuth.signInWithCredential(credential);
+  }
+
+  @override
+  Future<void> facebookSignIn() async {
+    final LoginResult result = await _facebookAuth.login();
+    final AccessToken accessToken = result.accessToken!;
+    final facebookAuthCredential =
+        FacebookAuthProvider.credential(accessToken.token);
+    await _firebaseAuth.signInWithCredential(facebookAuthCredential);
+  }
+
+  @override
+  String getUid() {
     try {
-      final googleSignIn = _googleSignIn;
-      final googleUser = await googleSignIn.signIn();
-      if (googleUser == null) return;
-      final googleAuth = await googleUser.authentication;
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      await _firebaseAuth.signInWithCredential(credential);
+      return _firebaseAuth.currentUser!.uid;
     } catch (e) {
       throw Exception(e);
     }
   }
 
   @override
-  Future<void> facebookSignIn() async {
-    try {
-      final LoginResult result = await _facebookAuth.login();
-      final AccessToken accessToken = result.accessToken!;
-      final facebookAuthCredential =
-          FacebookAuthProvider.credential(accessToken.token);
-      await _firebaseAuth.signInWithCredential(facebookAuthCredential);
-    } catch (e) {
-      throw Exception(e);
-    }
+  Future<void> addComment(String uid, String firstName, String lastName,
+      String? profileImage, String postId, String comment) async {
+    String commentId = const Uuid().v1();
+
+    final commentModel = CommentModel(
+      id: commentId,
+      userId: uid,
+      postId: postId,
+      comment: comment,
+      createdAt: DateTime.now().toString(),
+      updatedAt: '',
+      firstName: firstName,
+      lastName: lastName,
+      profileImage: profileImage,
+    );
+
+    await _firestore
+        .collection('comments')
+        .doc(commentId)
+        .set(commentModel.toJson());
   }
 }

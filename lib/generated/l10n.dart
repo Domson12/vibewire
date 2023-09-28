@@ -309,6 +309,226 @@ class S {
       args: [],
     );
   }
+
+  /// `Szukaj`
+  String get search {
+    return Intl.message(
+      'Szukaj',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `na czasie`
+  String get trending {
+    return Intl.message(
+      'na czasie',
+      name: 'trending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `najnowsze`
+  String get latest {
+    return Intl.message(
+      'najnowsze',
+      name: 'latest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Odkryj`
+  String get discover {
+    return Intl.message(
+      'Odkryj',
+      name: 'discover',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `newsy dnia`
+  String get daily_new {
+    return Intl.message(
+      'newsy dnia',
+      name: 'daily_new',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profil`
+  String get profile {
+    return Intl.message(
+      'Profil',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Powiadomienia`
+  String get notification {
+    return Intl.message(
+      'Powiadomienia',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wiadomości`
+  String get message {
+    return Intl.message(
+      'Wiadomości',
+      name: 'message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Na żywo`
+  String get stream {
+    return Intl.message(
+      'Na żywo',
+      name: 'stream',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strona główna`
+  String get home {
+    return Intl.message(
+      'Strona główna',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj story`
+  String get add_story {
+    return Intl.message(
+      'Dodaj story',
+      name: 'add_story',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dodaj post`
+  String get add_post {
+    return Intl.message(
+      'Dodaj post',
+      name: 'add_post',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opis`
+  String get description {
+    return Intl.message(
+      'Opis',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tytuł`
+  String get title {
+    return Intl.message(
+      'Tytuł',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `zmień język`
+  String get change_locale {
+    return Intl.message(
+      'zmień język',
+      name: 'change_locale',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galeria`
+  String get gallery {
+    return Intl.message(
+      'Galeria',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kamera`
+  String get camera {
+    return Intl.message(
+      'Kamera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Obserwujący`
+  String get followers {
+    return Intl.message(
+      'Obserwujący',
+      name: 'followers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Polubienia`
+  String get likes {
+    return Intl.message(
+      'Polubienia',
+      name: 'likes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posty`
+  String get posts {
+    return Intl.message(
+      'Posty',
+      name: 'posts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zapisz`
+  String get save {
+    return Intl.message(
+      'Zapisz',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pierwsza litera musi być duża`
+  String get upper_case_letter {
+    return Intl.message(
+      'Pierwsza litera musi być duża',
+      name: 'upper_case_letter',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -317,6 +537,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'pl'),
+      Locale.fromSubtags(languageCode: 'ar'),
       Locale.fromSubtags(languageCode: 'en'),
     ];
   }

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ionicons/ionicons.dart';
 
 import '../../../core/common/widget/app_elevated_button.dart';
 import '../../../core/common/widget/auth_form_field.dart';
@@ -37,6 +38,7 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
       backgroundColor: AppColors.primary,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: Center(
         child: SafeArea(
@@ -63,6 +65,15 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
                         ),
                         const SizedBox(height: 20),
                         AuthFormField(
+                          obscureText: state.isPasswordNotVisible,
+                          suffixIcon: IconButton(
+                            onPressed: () => context
+                                .read<AuthCubit>()
+                                .togglePasswordVisibility(),
+                            icon: state.isPasswordNotVisible
+                                ? const Icon(Ionicons.eye_off)
+                                : const Icon(Ionicons.eye),
+                          ),
                           controller: _password,
                           hintText: S.of(context).password,
                           validator: (value) => Validators.validatePassword(
@@ -81,31 +92,39 @@ class LoginPage extends StatelessWidget implements AutoRouteWrapper {
                         const SizedBox(height: 40),
                         SizedBox(
                           width: double.maxFinite,
-                          child: AppElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState?.validate() == true) {
-                                context.read<AuthCubit>().signIn(
-                                      email: _email.text,
-                                      password: _password.text,
-                                    );
-                                if (state.showErrorMessage == true) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(state.errorMessage ?? ''),
-                                    ),
-                                  );
-                                }
+                          child: BlocConsumer<AuthCubit, AuthState>(
+                            listener: (context, state) {
+                              if (state.showErrorMessage == true) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(state.errorMessage!),
+                                  ),
+                                );
                               }
                             },
-                            foregroundColor: AppColors.black,
-                            backgroundColor: AppColors.white,
-                            child: state.isLoading
-                                ? const CircularProgressIndicator()
-                                : Text(
-                                    S.of(context).login,
-                                    style:
-                                        Theme.of(context).xTextTheme.display0,
-                                  ),
+                            builder: (context, state) {
+                              return AppElevatedButton(
+                                onPressed: () {
+                                  if (_formKey.currentState?.validate() ==
+                                      true) {
+                                    context.read<AuthCubit>().signIn(
+                                          email: _email.text,
+                                          password: _password.text,
+                                        );
+                                  }
+                                },
+                                foregroundColor: AppColors.black,
+                                backgroundColor: AppColors.white,
+                                child: state.isLoading
+                                    ? const CircularProgressIndicator()
+                                    : Text(
+                                        S.of(context).login,
+                                        style: Theme.of(context)
+                                            .xTextTheme
+                                            .display0,
+                                      ),
+                              );
+                            },
                           ),
                         ),
                         const SizedBox(height: 20),

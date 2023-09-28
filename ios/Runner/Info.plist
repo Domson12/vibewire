@@ -57,13 +57,29 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>CFBundleLocalizations</key>
+        <array>
+            <string>pl</string>
+            <string>en</string>
+            <string>ar</string>
+        </array>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
-		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<key>UIApplicationSupportsIdirectInputEvents</key>
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
-	</dict>
+		<key>NSPhotoLibraryUsageDescription</key>
+            	<string>Photo library usage</string>
+        <key>NSCameraUsageDescription</key>
+                <string>camera usage</string>
+        <key>NSMicrophoneUsageDescription</key>
+                <string>microphone usage</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+                <string>This app needs access to location when open.</string>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+</dict>
 </plist>

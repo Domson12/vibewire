@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import '../../../domain/repository_impl/auth_facade_impl.dart';
+import '../../../../domain/repository_impl/auth_facade_impl.dart';
+import '../../../domain/model/credentials_model.dart';
+import '../../../domain/model/user_model.dart';
 
 part 'auth_state.dart';
 
@@ -17,7 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
   void togglePasswordVisibility() {
     emit(
       state.copyWith(
-        isPasswordVisible: !state.isPasswordVisible,
+        isPasswordNotVisible: !state.isPasswordNotVisible,
       ),
     );
   }
@@ -25,26 +27,40 @@ class AuthCubit extends Cubit<AuthState> {
   void toggleConfirmPasswordVisibility() {
     emit(
       state.copyWith(
-        isConfirmPasswordVisible: !state.isConfirmPasswordVisible,
+        isConfirmPasswordNotVisible: !state.isConfirmPasswordNotVisible,
       ),
     );
   }
 
+  String getUuid() {
+    return _authFacadeImpl.getUid();
+  }
+
   Future<void> register({
+    required String firstName,
+    required String lastName,
     required String email,
     required String password,
-    required String name,
-    required String lastName,
   }) async {
-    emit(state.copyWith(isLoading: true));
+    emit(state.copyWith(isLoading: true, showErrorMessage: false));
     try {
       await _authFacadeImpl.register(
-        email: email,
-        password: password,
-        name: name,
-        lastName: lastName,
+        credentialsModel: CredentialsModel(
+          email: email,
+          password: password,
+        ),
+        userModel: UserModel(
+          firstName: firstName,
+          lastName: lastName,
+          bio: '',
+          profileImage: '',
+          followers: [],
+          following: [],
+          likes: [],
+          posts: [],
+        ),
       );
-      emit(state.copyWith(isLoading: false));
+      emit(state.copyWith(isLoading: false, showErrorMessage: false));
     } on FirebaseAuthException catch (e) {
       emit(
         state.copyWith(
@@ -57,10 +73,15 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> signIn({required String email, required String password}) async {
-    emit(state.copyWith(isLoading: true));
+    emit(state.copyWith(isLoading: true, showErrorMessage: false));
     try {
-      await _authFacadeImpl.signIn(email: email, password: password);
-      emit(state.copyWith(isLoading: false));
+      await _authFacadeImpl.signIn(
+        credentialsModel: CredentialsModel(
+          email: email,
+          password: password,
+        ),
+      );
+      emit(state.copyWith(isLoading: false, showErrorMessage: false));
     } catch (e) {
       emit(state.copyWith(
         isLoading: false,
@@ -84,7 +105,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> facebookSignIn() async{
+  Future<void> facebookSignIn() async {
     emit(state.copyWith(isLoading: true));
     try {
       await _authFacadeImpl.facebookSignIn();

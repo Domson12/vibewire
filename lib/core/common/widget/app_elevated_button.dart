@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 
 
 class AppElevatedButton extends StatelessWidget {
-  final Widget child;
-  final Function()? onPressed;
+
   final Color? foregroundColor;
   final Color? backgroundColor;
+  final Function()? onPressed;
+  final Widget child;
 
   const AppElevatedButton({
     Key? key,
-    required this.child,
-    this.onPressed,
     this.foregroundColor,
     this.backgroundColor,
+    this.onPressed,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class AppElevatedButton extends StatelessWidget {
         foregroundColor: foregroundColor,
         backgroundColor: backgroundColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(40),
         ),
       ),
       child: Padding(

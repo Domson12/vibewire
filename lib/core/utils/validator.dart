@@ -5,6 +5,14 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 class Validators {
+
+  static String? validateEmptyField(String? value, BuildContext context) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).empty_field;
+    }
+    return null;
+  }
+
   static String? validateEmail(String? value, BuildContext context) {
     if (value == null || value.isEmpty) {
       return S.of(context).empty_field;
@@ -55,6 +63,9 @@ class Validators {
     }
     if (value.length < 3) {
       return S.of(context).invalid_name;
+    }
+    if (!RegExp(r"^[A-Z][a-zA-Z]*$").hasMatch(value)) {
+      return S.of(context).upper_case_letter;
     }
     return null;
   }

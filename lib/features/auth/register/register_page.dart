@@ -20,7 +20,7 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _name = TextEditingController();
+  final TextEditingController _firstName = TextEditingController();
 
   final TextEditingController _lastName = TextEditingController();
 
@@ -41,137 +41,143 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.primary,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-        ),
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: BlocBuilder<AuthCubit, AuthState>(
-              builder: (context, state) {
-                return Form(
-                  key: _formKey,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          const AuthLogo(),
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.1,
+      backgroundColor: AppColors.primary,
+      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: BlocBuilder<AuthCubit, AuthState>(
+            builder: (context, state) {
+              return Form(
+                key: _formKey,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        const AuthLogo(),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                        ),
+                        AuthFormField(
+                          controller: _firstName,
+                          hintText: S.of(context).name,
+                          suffixIcon: const Icon(Ionicons.person),
+                          validator: (value) {
+                            return Validators.validateName(value, context);
+                          },
+                        ),
+                        const SizedBox(height: 30),
+                        AuthFormField(
+                          controller: _lastName,
+                          hintText: S.of(context).surname,
+                          suffixIcon: const Icon(Ionicons.person),
+                          validator: (value) =>
+                              Validators.validateName(value, context),
+                        ),
+                        const SizedBox(height: 30),
+                        AuthFormField(
+                          controller: _email,
+                          hintText: S.of(context).email,
+                          suffixIcon: const Icon(Ionicons.mail),
+                          validator: (value) =>
+                              Validators.validateEmail(value, context),
+                        ),
+                        const SizedBox(height: 30),
+                        AuthFormField(
+                          controller: _password,
+                          hintText: S.of(context).password,
+                          obscureText: state.isPasswordNotVisible,
+                          suffixIcon: IconButton(
+                            onPressed: () => context
+                                .read<AuthCubit>()
+                                .togglePasswordVisibility(),
+                            icon: state.isPasswordNotVisible
+                                ? const Icon(Ionicons.eye_off)
+                                : const Icon(Ionicons.eye),
                           ),
-                          AuthFormField(
-                            controller: _name,
-                            hintText: S.of(context).name,
-                            suffixIcon: const Icon(Ionicons.person),
-                            validator: (value) {
-                              return Validators.validateName(value, context);
+                          validator: (value) =>
+                              Validators.validatePassword(value, context),
+                        ),
+                        const SizedBox(height: 30),
+                        AuthFormField(
+                          controller: _confirmPassword,
+                          hintText: S.of(context).confirm_password,
+                          obscureText: state.isConfirmPasswordNotVisible,
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              context
+                                  .read<AuthCubit>()
+                                  .toggleConfirmPasswordVisibility();
+                            },
+                            icon: state.isConfirmPasswordNotVisible
+                                ? const Icon(Ionicons.eye_off)
+                                : const Icon(Ionicons.eye),
+                          ),
+                          validator: (value) =>
+                              Validators.validatePassword(value, context),
+                        ),
+                        const SizedBox(height: 10),
+                        AuthNavigationRow(
+                          leftText: S.of(context).have_account,
+                          rightText: S.of(context).login,
+                          onTap: () => context.router.push(
+                            LoginRoute(),
+                          ),
+                        ),
+                        const SizedBox(height: 40),
+                        SizedBox(
+                          width: double.maxFinite,
+                          child: BlocConsumer<AuthCubit, AuthState>(
+                            listener: (context, state) {
+                              if (state.showErrorMessage == true) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(state.errorMessage!),
+                                  ),
+                                );
+                              }
+                            },
+                            builder: (context, state) {
+                              return AppElevatedButton(
+                                foregroundColor: AppColors.black,
+                                backgroundColor: AppColors.white,
+                                onPressed: () {
+                                  if (_formKey.currentState?.validate() ==
+                                      true) {
+                                    context.read<AuthCubit>().register(
+                                          email: _email.text,
+                                          password: _password.text,
+                                          firstName: _firstName.text,
+                                          lastName: _lastName.text,
+                                        );
+                                  }
+                                },
+                                child: state.isLoading
+                                    ? const CircularProgressIndicator()
+                                    : Text(
+                                        S.of(context).register,
+                                        style: Theme.of(context)
+                                            .xTextTheme
+                                            .display0,
+                                      ),
+                              );
                             },
                           ),
-                          const SizedBox(height: 30),
-                          AuthFormField(
-                            controller: _lastName,
-                            hintText: S.of(context).surname,
-                            suffixIcon: const Icon(Ionicons.person),
-                            validator: (value) =>
-                                Validators.validateName(value, context),
-                          ),
-                          const SizedBox(height: 30),
-                          AuthFormField(
-                            controller: _email,
-                            hintText: S.of(context).email,
-                            suffixIcon: const Icon(Ionicons.mail),
-                            validator: (value) =>
-                                Validators.validateEmail(value, context),
-                          ),
-                          const SizedBox(height: 30),
-                          AuthFormField(
-                            controller: _password,
-                            hintText: S.of(context).password,
-                            obscureText: state.isPasswordVisible,
-                            suffixIcon: IconButton(
-                              onPressed: () => context
-                                  .read<AuthCubit>()
-                                  .togglePasswordVisibility(),
-                              icon: state.isPasswordVisible
-                                  ? const Icon(Ionicons.eye_off)
-                                  : const Icon(Ionicons.eye),
-                            ),
-                            validator: (value) =>
-                                Validators.validatePassword(value, context),
-                          ),
-                          const SizedBox(height: 30),
-                          AuthFormField(
-                            controller: _confirmPassword,
-                            hintText: S.of(context).confirm_password,
-                            obscureText: state.isConfirmPasswordVisible,
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                context
-                                    .read<AuthCubit>()
-                                    .toggleConfirmPasswordVisibility();
-                              },
-                              icon: state.isConfirmPasswordVisible
-                                  ? const Icon(Ionicons.eye_off)
-                                  : const Icon(Ionicons.eye),
-                            ),
-                            validator: (value) =>
-                                Validators.validatePassword(value, context),
-                          ),
-                          const SizedBox(height: 10),
-                          AuthNavigationRow(
-                            leftText: S.of(context).have_account,
-                            rightText: S.of(context).login,
-                            onTap: () => context.router.push(
-                              LoginRoute(),
-                            ),
-                          ),
-                          const SizedBox(height: 40),
-                          SizedBox(
-                            width: double.maxFinite,
-                            child: AppElevatedButton(
-                              foregroundColor: AppColors.black,
-                              backgroundColor: AppColors.white,
-                              onPressed: () {
-                                if (_formKey.currentState?.validate() == true) {
-                                  context.read<AuthCubit>().register(
-                                        email: _email.text,
-                                        password: _password.text,
-                                        name: _name.text,
-                                        lastName: _lastName.text,
-                                      );
-                                  if (state.showErrorMessage == true) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(state.errorMessage ?? ''),
-                                      ),
-                                    );
-                                  }
-                                }
-                              },
-                              child: state.isLoading
-                                  ? const CircularProgressIndicator()
-                                  : Text(
-                                      S.of(context).register,
-                                      style:
-                                          Theme.of(context).xTextTheme.display0,
-                                    ),
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 20),
+                      ],
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ),
+      ),
     );
   }
 }

@@ -21,7 +21,8 @@ RegisterModel _$RegisterModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$RegisterModel {
   String? get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get profileImage => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
 
@@ -37,7 +38,12 @@ abstract class $RegisterModelCopyWith<$Res> {
           RegisterModel value, $Res Function(RegisterModel) then) =
       _$RegisterModelCopyWithImpl<$Res, RegisterModel>;
   @useResult
-  $Res call({String? id, String name, String lastName, String email});
+  $Res call(
+      {String? id,
+      String profileImage,
+      String firstName,
+      String lastName,
+      String email});
 }
 
 /// @nodoc
@@ -54,7 +60,8 @@ class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? profileImage = null,
+    Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
   }) {
@@ -63,9 +70,13 @@ class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -87,7 +98,12 @@ abstract class _$$_RegisterModelCopyWith<$Res>
       __$$_RegisterModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String name, String lastName, String email});
+  $Res call(
+      {String? id,
+      String profileImage,
+      String firstName,
+      String lastName,
+      String email});
 }
 
 /// @nodoc
@@ -102,7 +118,8 @@ class __$$_RegisterModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? profileImage = null,
+    Object? firstName = null,
     Object? lastName = null,
     Object? email = null,
   }) {
@@ -111,9 +128,13 @@ class __$$_RegisterModelCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
+              as String,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
       lastName: null == lastName
           ? _value.lastName
@@ -132,7 +153,8 @@ class __$$_RegisterModelCopyWithImpl<$Res>
 class _$_RegisterModel implements _RegisterModel {
   const _$_RegisterModel(
       {required this.id,
-      required this.name,
+      this.profileImage = '',
+      required this.firstName,
       required this.lastName,
       required this.email});
 
@@ -142,7 +164,10 @@ class _$_RegisterModel implements _RegisterModel {
   @override
   final String? id;
   @override
-  final String name;
+  @JsonKey()
+  final String profileImage;
+  @override
+  final String firstName;
   @override
   final String lastName;
   @override
@@ -150,7 +175,7 @@ class _$_RegisterModel implements _RegisterModel {
 
   @override
   String toString() {
-    return 'RegisterModel(id: $id, name: $name, lastName: $lastName, email: $email)';
+    return 'RegisterModel(id: $id, profileImage: $profileImage, firstName: $firstName, lastName: $lastName, email: $email)';
   }
 
   @override
@@ -159,7 +184,10 @@ class _$_RegisterModel implements _RegisterModel {
         (other.runtimeType == runtimeType &&
             other is _$_RegisterModel &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.profileImage, profileImage) ||
+                other.profileImage == profileImage) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email));
@@ -167,7 +195,8 @@ class _$_RegisterModel implements _RegisterModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, lastName, email);
+  int get hashCode =>
+      Object.hash(runtimeType, id, profileImage, firstName, lastName, email);
 
   @JsonKey(ignore: true)
   @override
@@ -186,7 +215,8 @@ class _$_RegisterModel implements _RegisterModel {
 abstract class _RegisterModel implements RegisterModel {
   const factory _RegisterModel(
       {required final String? id,
-      required final String name,
+      final String profileImage,
+      required final String firstName,
       required final String lastName,
       required final String email}) = _$_RegisterModel;
 
@@ -196,7 +226,9 @@ abstract class _RegisterModel implements RegisterModel {
   @override
   String? get id;
   @override
-  String get name;
+  String get profileImage;
+  @override
+  String get firstName;
   @override
   String get lastName;
   @override

@@ -35,13 +35,26 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/profile_image.jpg
+  AssetGenImage get profileImage =>
+      const AssetGenImage('assets/images/profile_image.jpg');
+
   /// File path: assets/images/splash_icon.png
   AssetGenImage get splashIcon =>
       const AssetGenImage('assets/images/splash_icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [human1, human2, human3, human4, human5, human6, logo, splashIcon];
+  List<AssetGenImage> get values => [
+        human1,
+        human2,
+        human3,
+        human4,
+        human5,
+        human6,
+        logo,
+        profileImage,
+        splashIcon
+      ];
 }
 
 class $AssetsSvgGen {
