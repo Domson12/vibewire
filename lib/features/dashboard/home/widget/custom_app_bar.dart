@@ -32,9 +32,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           CircleAvatar(
             radius: 20,
             backgroundColor: AppColors.grey,
-            foregroundImage: AssetImage(
-              profileImage ?? Assets.images.human1.path,
-            ),
+            foregroundImage:
+                AssetImage(profileImage ?? Assets.images.profileImage.path),
             foregroundColor: AppColors.grey,
           ),
         ],

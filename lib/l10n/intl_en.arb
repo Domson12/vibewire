@@ -49,5 +49,7 @@
   "camera": "Camera",
   "followers": "Followers",
   "likes": "Likes",
-  "posts": "Posts"
+  "posts": "Posts",
+  "save": "Save",
+  "upper_case_letter": "First letter must be uppercase"
 }

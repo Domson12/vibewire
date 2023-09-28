@@ -90,12 +90,12 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                         AuthFormField(
                           controller: _password,
                           hintText: S.of(context).password,
-                          obscureText: state.isPasswordVisible,
+                          obscureText: state.isPasswordNotVisible,
                           suffixIcon: IconButton(
                             onPressed: () => context
                                 .read<AuthCubit>()
                                 .togglePasswordVisibility(),
-                            icon: state.isPasswordVisible
+                            icon: state.isPasswordNotVisible
                                 ? const Icon(Ionicons.eye_off)
                                 : const Icon(Ionicons.eye),
                           ),
@@ -106,14 +106,14 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                         AuthFormField(
                           controller: _confirmPassword,
                           hintText: S.of(context).confirm_password,
-                          obscureText: state.isConfirmPasswordVisible,
+                          obscureText: state.isConfirmPasswordNotVisible,
                           suffixIcon: IconButton(
                             onPressed: () {
                               context
                                   .read<AuthCubit>()
                                   .toggleConfirmPasswordVisibility();
                             },
-                            icon: state.isConfirmPasswordVisible
+                            icon: state.isConfirmPasswordNotVisible
                                 ? const Icon(Ionicons.eye_off)
                                 : const Icon(Ionicons.eye),
                           ),
@@ -131,33 +131,41 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                         const SizedBox(height: 40),
                         SizedBox(
                           width: double.maxFinite,
-                          child: AppElevatedButton(
-                            foregroundColor: AppColors.black,
-                            backgroundColor: AppColors.white,
-                            onPressed: () {
-                              if (_formKey.currentState?.validate() == true) {
-                                context.read<AuthCubit>().register(
-                                      email: _email.text,
-                                      password: _password.text,
-                                      firstName: _firstName.text,
-                                      lastName: _lastName.text,
-                                    );
-                                if (state.showErrorMessage == true) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(state.errorMessage ?? ''),
-                                    ),
-                                  );
-                                }
+                          child: BlocConsumer<AuthCubit, AuthState>(
+                            listener: (context, state) {
+                              if (state.showErrorMessage == true) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(state.errorMessage!),
+                                  ),
+                                );
                               }
                             },
-                            child: state.isLoading
-                                ? const CircularProgressIndicator()
-                                : Text(
-                                    S.of(context).register,
-                                    style:
-                                        Theme.of(context).xTextTheme.display0,
-                                  ),
+                            builder: (context, state) {
+                              return AppElevatedButton(
+                                foregroundColor: AppColors.black,
+                                backgroundColor: AppColors.white,
+                                onPressed: () {
+                                  if (_formKey.currentState?.validate() ==
+                                      true) {
+                                    context.read<AuthCubit>().register(
+                                          email: _email.text,
+                                          password: _password.text,
+                                          firstName: _firstName.text,
+                                          lastName: _lastName.text,
+                                        );
+                                  }
+                                },
+                                child: state.isLoading
+                                    ? const CircularProgressIndicator()
+                                    : Text(
+                                        S.of(context).register,
+                                        style: Theme.of(context)
+                                            .xTextTheme
+                                            .display0,
+                                      ),
+                              );
+                            },
                           ),
                         ),
                         const SizedBox(height: 20),

@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AuthState {
-  bool get isPasswordVisible => throw _privateConstructorUsedError;
-  bool get isConfirmPasswordVisible => throw _privateConstructorUsedError;
+  bool get isPasswordNotVisible => throw _privateConstructorUsedError;
+  bool get isConfirmPasswordNotVisible => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
@@ -34,8 +34,8 @@ abstract class $AuthStateCopyWith<$Res> {
       _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
   $Res call(
-      {bool isPasswordVisible,
-      bool isConfirmPasswordVisible,
+      {bool isPasswordNotVisible,
+      bool isConfirmPasswordNotVisible,
       bool isLoggedIn,
       String? errorMessage,
       bool showErrorMessage,
@@ -55,21 +55,21 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isPasswordVisible = null,
-    Object? isConfirmPasswordVisible = null,
+    Object? isPasswordNotVisible = null,
+    Object? isConfirmPasswordNotVisible = null,
     Object? isLoggedIn = null,
     Object? errorMessage = freezed,
     Object? showErrorMessage = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      isPasswordVisible: null == isPasswordVisible
-          ? _value.isPasswordVisible
-          : isPasswordVisible // ignore: cast_nullable_to_non_nullable
+      isPasswordNotVisible: null == isPasswordNotVisible
+          ? _value.isPasswordNotVisible
+          : isPasswordNotVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      isConfirmPasswordVisible: null == isConfirmPasswordVisible
-          ? _value.isConfirmPasswordVisible
-          : isConfirmPasswordVisible // ignore: cast_nullable_to_non_nullable
+      isConfirmPasswordNotVisible: null == isConfirmPasswordNotVisible
+          ? _value.isConfirmPasswordNotVisible
+          : isConfirmPasswordNotVisible // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
@@ -99,8 +99,8 @@ abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {bool isPasswordVisible,
-      bool isConfirmPasswordVisible,
+      {bool isPasswordNotVisible,
+      bool isConfirmPasswordNotVisible,
       bool isLoggedIn,
       String? errorMessage,
       bool showErrorMessage,
@@ -118,21 +118,21 @@ class __$$_AuthStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isPasswordVisible = null,
-    Object? isConfirmPasswordVisible = null,
+    Object? isPasswordNotVisible = null,
+    Object? isConfirmPasswordNotVisible = null,
     Object? isLoggedIn = null,
     Object? errorMessage = freezed,
     Object? showErrorMessage = null,
     Object? isLoading = null,
   }) {
     return _then(_$_AuthState(
-      isPasswordVisible: null == isPasswordVisible
-          ? _value.isPasswordVisible
-          : isPasswordVisible // ignore: cast_nullable_to_non_nullable
+      isPasswordNotVisible: null == isPasswordNotVisible
+          ? _value.isPasswordNotVisible
+          : isPasswordNotVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      isConfirmPasswordVisible: null == isConfirmPasswordVisible
-          ? _value.isConfirmPasswordVisible
-          : isConfirmPasswordVisible // ignore: cast_nullable_to_non_nullable
+      isConfirmPasswordNotVisible: null == isConfirmPasswordNotVisible
+          ? _value.isConfirmPasswordNotVisible
+          : isConfirmPasswordNotVisible // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
@@ -158,8 +158,8 @@ class __$$_AuthStateCopyWithImpl<$Res>
 
 class _$_AuthState implements _AuthState {
   const _$_AuthState(
-      {this.isPasswordVisible = false,
-      this.isConfirmPasswordVisible = false,
+      {this.isPasswordNotVisible = true,
+      this.isConfirmPasswordNotVisible = true,
       this.isLoggedIn = false,
       this.errorMessage = '',
       this.showErrorMessage = false,
@@ -167,10 +167,10 @@ class _$_AuthState implements _AuthState {
 
   @override
   @JsonKey()
-  final bool isPasswordVisible;
+  final bool isPasswordNotVisible;
   @override
   @JsonKey()
-  final bool isConfirmPasswordVisible;
+  final bool isConfirmPasswordNotVisible;
   @override
   @JsonKey()
   final bool isLoggedIn;
@@ -186,7 +186,7 @@ class _$_AuthState implements _AuthState {
 
   @override
   String toString() {
-    return 'AuthState(isPasswordVisible: $isPasswordVisible, isConfirmPasswordVisible: $isConfirmPasswordVisible, isLoggedIn: $isLoggedIn, errorMessage: $errorMessage, showErrorMessage: $showErrorMessage, isLoading: $isLoading)';
+    return 'AuthState(isPasswordNotVisible: $isPasswordNotVisible, isConfirmPasswordNotVisible: $isConfirmPasswordNotVisible, isLoggedIn: $isLoggedIn, errorMessage: $errorMessage, showErrorMessage: $showErrorMessage, isLoading: $isLoading)';
   }
 
   @override
@@ -194,11 +194,12 @@ class _$_AuthState implements _AuthState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AuthState &&
-            (identical(other.isPasswordVisible, isPasswordVisible) ||
-                other.isPasswordVisible == isPasswordVisible) &&
-            (identical(
-                    other.isConfirmPasswordVisible, isConfirmPasswordVisible) ||
-                other.isConfirmPasswordVisible == isConfirmPasswordVisible) &&
+            (identical(other.isPasswordNotVisible, isPasswordNotVisible) ||
+                other.isPasswordNotVisible == isPasswordNotVisible) &&
+            (identical(other.isConfirmPasswordNotVisible,
+                    isConfirmPasswordNotVisible) ||
+                other.isConfirmPasswordNotVisible ==
+                    isConfirmPasswordNotVisible) &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -212,8 +213,8 @@ class _$_AuthState implements _AuthState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      isPasswordVisible,
-      isConfirmPasswordVisible,
+      isPasswordNotVisible,
+      isConfirmPasswordNotVisible,
       isLoggedIn,
       errorMessage,
       showErrorMessage,
@@ -228,17 +229,17 @@ class _$_AuthState implements _AuthState {
 
 abstract class _AuthState implements AuthState {
   const factory _AuthState(
-      {final bool isPasswordVisible,
-      final bool isConfirmPasswordVisible,
+      {final bool isPasswordNotVisible,
+      final bool isConfirmPasswordNotVisible,
       final bool isLoggedIn,
       final String? errorMessage,
       final bool showErrorMessage,
       final bool isLoading}) = _$_AuthState;
 
   @override
-  bool get isPasswordVisible;
+  bool get isPasswordNotVisible;
   @override
-  bool get isConfirmPasswordVisible;
+  bool get isConfirmPasswordNotVisible;
   @override
   bool get isLoggedIn;
   @override

@@ -78,10 +78,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "stream": MessageLookupByLibrary.simpleMessage("Stream"),
         "surname": MessageLookupByLibrary.simpleMessage("Surname"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
-        "trending": MessageLookupByLibrary.simpleMessage("Trending")
+        "trending": MessageLookupByLibrary.simpleMessage("Trending"),
+        "upper_case_letter": MessageLookupByLibrary.simpleMessage(
+            "First letter must be uppercase")
       };
 }

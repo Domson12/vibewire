@@ -64,6 +64,9 @@ class Validators {
     if (value.length < 3) {
       return S.of(context).invalid_name;
     }
+    if (!RegExp(r"^[A-Z][a-zA-Z]*$").hasMatch(value)) {
+      return S.of(context).upper_case_letter;
+    }
     return null;
   }
 

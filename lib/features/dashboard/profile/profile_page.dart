@@ -2,9 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/navigation/app_router.dart';
 import '../../../core/utils/injection_container.dart';
 
 import '../../../generated/l10n.dart';
+import '../user_data/user_data_cubit.dart';
 import 'cubit/profile_cubit.dart';
 import 'widget/profile_info.dart';
 
@@ -19,6 +21,7 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ProfileCubit>(create: (_) => sl<ProfileCubit>()),
+        BlocProvider<UserDataCubit>(create: (_) => sl<UserDataCubit>()),
       ],
       child: this,
     );
@@ -33,22 +36,26 @@ class ProfilePage extends StatelessWidget implements AutoRouteWrapper {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: BlocBuilder<ProfileCubit, ProfileState>(
-        builder: (context, state) {
-          return ProfileInfo(
-            profileImage: state.profileImage,
-            firstName: state.firstName,
-            lastName: state.lastName,
-            bio: state.bio,
-            postsNumber: state.postLen.toString(),
-            followersNumber: state.followers.toString(),
-            likesNumber: state.likes.toString(),
-            buttonText: 'log Out',
-            onPressed: () {
-              context.read<ProfileCubit>().signOut();
-            },
-            onTapIcon: () {
-              //TODO: profile edit page
+      body: BlocBuilder<UserDataCubit, UserDataState>(
+        builder: (userContext, userState) {
+          return BlocBuilder<ProfileCubit, ProfileState>(
+            builder: (context, state) {
+              return ProfileInfo(
+                profileImage: userState.profileImage,
+                firstName: userState.firstName,
+                lastName: userState.lastName,
+                bio: userState.bio,
+                postsNumber: userState.postLen.toString(),
+                followersNumber: userState.followers.toString(),
+                likesNumber: userState.likes.toString(),
+                buttonText: S.of(context).logout,
+                onPressed: () {
+                  context.read<ProfileCubit>().signOut();
+                },
+                onTapIcon: () {
+                  context.router.push(const EditProfileRoute());
+                },
+              );
             },
           );
         },

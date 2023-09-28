@@ -17,6 +17,7 @@ import '../../features/dashboard/home/latest/latest_page.dart';
 import '../../features/dashboard/home/trending/trending_page.dart';
 import '../../features/dashboard/message/message_page.dart';
 import '../../features/dashboard/notification/notification_page.dart';
+import '../../features/dashboard/profile/edit_profile/edit_profile_page.dart';
 import '../../features/dashboard/profile/profile_page.dart';
 import '../../features/dashboard/stream/stream_page.dart';
 
@@ -57,6 +58,7 @@ class AppRouter extends _$AppRouter {
             ),
           ],
         ),
+        AutoRoute(page: EditProfileRoute.page),
         AutoRoute(page: AddPostRoute.page, children: [
           AutoRoute(page: AddMainPostRoute.page, initial: true),
           AutoRoute(page: AddStoryRoute.page),

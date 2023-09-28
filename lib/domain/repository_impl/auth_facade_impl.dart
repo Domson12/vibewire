@@ -5,6 +5,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:uuid/uuid.dart';
 
+import '../model/comment_model.dart';
+import '../model/credentials_model.dart';
 import '../model/user_model.dart';
 import '../repository/auth_facade.dart';
 
@@ -41,31 +43,25 @@ class AuthFacadeImpl implements IAuthFacade {
 
   @override
   Future<void> register({
-    required String firstName,
-    required String lastName,
-    required String email,
-    required String password,
-    required String bio,
-    required String profileImage,
-    required List<int> followers,
-    required List<int> following,
-    required List<int> likes,
+    required UserModel userModel,
+    required CredentialsModel credentialsModel,
   }) async {
     UserCredential credentials =
         await _firebaseAuth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
+      email: credentialsModel.email,
+      password: credentialsModel.password,
     );
 
     UserModel user = UserModel(
-      uid: credentials.user?.uid,
-      firstName: firstName,
-      lastName: lastName,
-      bio: bio,
-      profileImage: profileImage,
-      followers: followers,
-      following: following,
-      likes: likes,
+      uid: credentials.user!.uid,
+      firstName: userModel.firstName,
+      lastName: userModel.lastName,
+      bio: userModel.bio,
+      profileImage: userModel.profileImage,
+      followers: userModel.followers,
+      following: userModel.following,
+      likes: userModel.likes,
+      posts: userModel.posts,
     );
 
     await _firestore
@@ -75,10 +71,10 @@ class AuthFacadeImpl implements IAuthFacade {
   }
 
   @override
-  Future<void> signIn({required String email, required String password}) {
+  Future<void> signIn({required CredentialsModel credentialsModel}) {
     return _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
+      email: credentialsModel.email,
+      password: credentialsModel.password,
     );
   }
 
@@ -118,17 +114,21 @@ class AuthFacadeImpl implements IAuthFacade {
       String? profileImage, String postId, String comment) async {
     String commentId = const Uuid().v1();
 
-    final commentModel = {
-      'uid': uid,
-      'commentId': commentId,
-      'firstName': firstName,
-      'lastName': lastName,
-      'profileImage': profileImage,
-      'postId': postId,
-      'comment': comment,
-      'datePublished': DateTime.now(),
-    };
+    final commentModel = CommentModel(
+      id: commentId,
+      userId: uid,
+      postId: postId,
+      comment: comment,
+      createdAt: DateTime.now().toString(),
+      updatedAt: '',
+      firstName: firstName,
+      lastName: lastName,
+      profileImage: profileImage,
+    );
 
-    await _firestore.collection('comments').doc(commentId).set(commentModel);
+    await _firestore
+        .collection('comments')
+        .doc(commentId)
+        .set(commentModel.toJson());
   }
 }

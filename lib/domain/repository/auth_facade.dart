@@ -1,18 +1,12 @@
+import '../model/credentials_model.dart';
 import '../model/user_model.dart';
 
 abstract class IAuthFacade {
-  Future<void> signIn({required String email, required String password});
+  Future<void> signIn({required CredentialsModel credentialsModel});
 
   Future<void> register({
-    required String firstName,
-    required String lastName,
-    required String email,
-    required String password,
-    required String bio,
-    required String profileImage,
-    required List<int> likes,
-    required List<int> followers,
-    required List<int> following,
+    required UserModel userModel,
+    required CredentialsModel credentialsModel,
   });
 
   Future<void> googleSignIn();

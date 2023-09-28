@@ -50,5 +50,7 @@
   "camera": "Kamera",
   "followers": "Obserwujący",
   "likes": "Polubienia",
-  "posts": "Posty"
+  "posts": "Posty",
+  "save": "Zapisz",
+  "upper_case_letter": "Pierwsza litera musi być duża"
 }

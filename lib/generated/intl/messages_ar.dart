@@ -81,10 +81,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "stream": MessageLookupByLibrary.simpleMessage("تيار"),
         "surname": MessageLookupByLibrary.simpleMessage("الكنية"),
         "title": MessageLookupByLibrary.simpleMessage("عنوان"),
-        "trending": MessageLookupByLibrary.simpleMessage("الاتجاهات")
+        "trending": MessageLookupByLibrary.simpleMessage("الاتجاهات"),
+        "upper_case_letter": MessageLookupByLibrary.simpleMessage("حرف كبير")
       };
 }

@@ -509,6 +509,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Zapisz`
+  String get save {
+    return Intl.message(
+      'Zapisz',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pierwsza litera musi być duża`
+  String get upper_case_letter {
+    return Intl.message(
+      'Pierwsza litera musi być duża',
+      name: 'upper_case_letter',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

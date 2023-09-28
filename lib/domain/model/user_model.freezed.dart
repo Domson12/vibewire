@@ -20,7 +20,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String? get uid => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get bio => throw _privateConstructorUsedError;
@@ -28,6 +28,7 @@ mixin _$UserModel {
   List<dynamic> get followers => throw _privateConstructorUsedError;
   List<dynamic> get following => throw _privateConstructorUsedError;
   List<dynamic> get likes => throw _privateConstructorUsedError;
+  List<dynamic> get posts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,14 +42,15 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String? uid,
+      {String uid,
       String firstName,
       String lastName,
       String bio,
       String profileImage,
       List<dynamic> followers,
       List<dynamic> following,
-      List<dynamic> likes});
+      List<dynamic> likes,
+      List<dynamic> posts});
 }
 
 /// @nodoc
@@ -64,7 +66,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? bio = null,
@@ -72,12 +74,13 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? followers = null,
     Object? following = null,
     Object? likes = null,
+    Object? posts = null,
   }) {
     return _then(_value.copyWith(
-      uid: freezed == uid
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -106,6 +109,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.likes
           : likes // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      posts: null == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ) as $Val);
   }
 }
@@ -118,14 +125,15 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? uid,
+      {String uid,
       String firstName,
       String lastName,
       String bio,
       String profileImage,
       List<dynamic> followers,
       List<dynamic> following,
-      List<dynamic> likes});
+      List<dynamic> likes,
+      List<dynamic> posts});
 }
 
 /// @nodoc
@@ -139,7 +147,7 @@ class __$$_UserModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uid = null,
     Object? firstName = null,
     Object? lastName = null,
     Object? bio = null,
@@ -147,12 +155,13 @@ class __$$_UserModelCopyWithImpl<$Res>
     Object? followers = null,
     Object? following = null,
     Object? likes = null,
+    Object? posts = null,
   }) {
     return _then(_$_UserModel(
-      uid: freezed == uid
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -181,6 +190,10 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value._likes
           : likes // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -189,23 +202,26 @@ class __$$_UserModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserModel implements _UserModel {
   const _$_UserModel(
-      {required this.uid,
+      {this.uid = '',
       required this.firstName,
       required this.lastName,
       required this.bio,
       required this.profileImage,
       required final List<dynamic> followers,
       required final List<dynamic> following,
-      required final List<dynamic> likes})
+      required final List<dynamic> likes,
+      required final List<dynamic> posts})
       : _followers = followers,
         _following = following,
-        _likes = likes;
+        _likes = likes,
+        _posts = posts;
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
 
   @override
-  final String? uid;
+  @JsonKey()
+  final String uid;
   @override
   final String firstName;
   @override
@@ -238,9 +254,17 @@ class _$_UserModel implements _UserModel {
     return EqualUnmodifiableListView(_likes);
   }
 
+  final List<dynamic> _posts;
+  @override
+  List<dynamic> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
+
   @override
   String toString() {
-    return 'UserModel(uid: $uid, firstName: $firstName, lastName: $lastName, bio: $bio, profileImage: $profileImage, followers: $followers, following: $following, likes: $likes)';
+    return 'UserModel(uid: $uid, firstName: $firstName, lastName: $lastName, bio: $bio, profileImage: $profileImage, followers: $followers, following: $following, likes: $likes, posts: $posts)';
   }
 
   @override
@@ -260,7 +284,8 @@ class _$_UserModel implements _UserModel {
                 .equals(other._followers, _followers) &&
             const DeepCollectionEquality()
                 .equals(other._following, _following) &&
-            const DeepCollectionEquality().equals(other._likes, _likes));
+            const DeepCollectionEquality().equals(other._likes, _likes) &&
+            const DeepCollectionEquality().equals(other._posts, _posts));
   }
 
   @JsonKey(ignore: true)
@@ -274,7 +299,8 @@ class _$_UserModel implements _UserModel {
       profileImage,
       const DeepCollectionEquality().hash(_followers),
       const DeepCollectionEquality().hash(_following),
-      const DeepCollectionEquality().hash(_likes));
+      const DeepCollectionEquality().hash(_likes),
+      const DeepCollectionEquality().hash(_posts));
 
   @JsonKey(ignore: true)
   @override
@@ -292,20 +318,21 @@ class _$_UserModel implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {required final String? uid,
+      {final String uid,
       required final String firstName,
       required final String lastName,
       required final String bio,
       required final String profileImage,
       required final List<dynamic> followers,
       required final List<dynamic> following,
-      required final List<dynamic> likes}) = _$_UserModel;
+      required final List<dynamic> likes,
+      required final List<dynamic> posts}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
 
   @override
-  String? get uid;
+  String get uid;
   @override
   String get firstName;
   @override
@@ -320,6 +347,8 @@ abstract class _UserModel implements UserModel {
   List<dynamic> get following;
   @override
   List<dynamic> get likes;
+  @override
+  List<dynamic> get posts;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

@@ -86,10 +86,18 @@ class ProfileInfo extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ProfileData(text: S.of(context).posts, dataText: postsNumber),
                   ProfileData(
-                      text: S.of(context).followers, dataText: followersNumber),
-                  ProfileData(text: S.of(context).likes, dataText: likesNumber),
+                    text: S.of(context).posts,
+                    dataText: postsNumber,
+                  ),
+                  ProfileData(
+                    text: S.of(context).followers,
+                    dataText: followersNumber,
+                  ),
+                  ProfileData(
+                    text: S.of(context).likes,
+                    dataText: likesNumber,
+                  ),
                 ],
               ),
             ),
