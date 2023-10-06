@@ -1,11 +1,10 @@
-
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 
 class Validators {
-
   static String? validateEmptyField(String? value, BuildContext context) {
     if (value == null || value.isEmpty) {
       return S.of(context).empty_field;
@@ -47,8 +46,9 @@ class Validators {
     }
     return null;
   }
-  
-  static String? validateConfirmPassword(String? value, BuildContext context, String password) {
+
+  static String? validateConfirmPassword(
+      String? value, BuildContext context, String password) {
     if (value == null || value.isEmpty) {
       return S.of(context).empty_field;
     } else if (value != password) {
@@ -80,4 +80,10 @@ class Validators {
     return null;
   }
 
+  static String? validateImage(Uint8List? value, BuildContext context) {
+    if (value == null || value.isEmpty) {
+      return S.of(context).empty_field;
+    }
+    return null;
+  }
 }

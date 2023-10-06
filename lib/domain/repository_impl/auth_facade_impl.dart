@@ -3,9 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:uuid/uuid.dart';
 
-import '../model/comment_model.dart';
 import '../model/credentials_model.dart';
 import '../model/user_model.dart';
 import '../repository/auth_facade.dart';
@@ -26,15 +24,6 @@ class AuthFacadeImpl implements IAuthFacade {
   final FacebookAuth _facebookAuth;
 
   final FirebaseFirestore _firestore;
-
-  @override
-  Future<UserModel?> getUserData() {
-    return _firestore
-        .collection('users')
-        .doc(_firebaseAuth.currentUser!.uid)
-        .get()
-        .then((value) => UserModel.fromJson(value.data()!));
-  }
 
   @override
   Future<void> logOut() {
@@ -110,25 +99,7 @@ class AuthFacadeImpl implements IAuthFacade {
   }
 
   @override
-  Future<void> addComment(String uid, String firstName, String lastName,
-      String? profileImage, String postId, String comment) async {
-    String commentId = const Uuid().v1();
-
-    final commentModel = CommentModel(
-      id: commentId,
-      userId: uid,
-      postId: postId,
-      comment: comment,
-      createdAt: DateTime.now().toString(),
-      updatedAt: '',
-      firstName: firstName,
-      lastName: lastName,
-      profileImage: profileImage,
-    );
-
-    await _firestore
-        .collection('comments')
-        .doc(commentId)
-        .set(commentModel.toJson());
+  Future<void> resetPassword({required String email}) {
+    return _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 }

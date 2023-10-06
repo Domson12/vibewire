@@ -9,20 +9,20 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../generated/l10n.dart';
 
-part 'image_picker_state.dart';
+part 'photo_picker_state.dart';
 
-part 'image_picker_cubit.freezed.dart';
+part 'photo_picker_cubit.freezed.dart';
 
 @injectable
-class ImagePickerCubit extends Cubit<ImagePickerState> {
-  ImagePickerCubit() : super(const ImagePickerState());
+class PhotoPickerCubit extends Cubit<PhotoPickerState> {
+  PhotoPickerCubit() : super(const PhotoPickerState());
 
-  Future<void> _imagePicker(ImageSource source) async {
+  Future<void> _imagePicker(ImageSource source, FormFieldState fieldState) async {
     emit(state.copyWith(isLoading: true));
     final imageFile = await ImagePicker().pickImage(source: source);
     if (imageFile != null) {
       final fileBytes = await imageFile.readAsBytes();
-
+      fieldState.didChange(fileBytes);
       emit(state.copyWith(
         imageBytes: fileBytes,
         isPhotoSelected: true,
@@ -30,7 +30,7 @@ class ImagePickerCubit extends Cubit<ImagePickerState> {
       ));
     }
   }
-  void showPicker(BuildContext context) {
+  void showPicker(BuildContext context, FormFieldState fieldState) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -41,7 +41,7 @@ class ImagePickerCubit extends Cubit<ImagePickerState> {
                 leading: const Icon(Icons.photo_library),
                 title: Text(S.of(context).gallery),
                 onTap: () {
-                  _imagePicker(ImageSource.gallery);
+                  _imagePicker(ImageSource.gallery, fieldState);
                   Navigator.of(context).pop();
                 },
               ),
@@ -49,7 +49,7 @@ class ImagePickerCubit extends Cubit<ImagePickerState> {
                 leading: const Icon(Icons.photo_camera),
                 title: Text(S.of(context).camera),
                 onTap: () {
-                  _imagePicker(ImageSource.camera);
+                  _imagePicker(ImageSource.camera, fieldState);
                   Navigator.of(context).pop();
                   context.router.pop();
                 },

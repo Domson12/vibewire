@@ -5,8 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
-import '../image_picker/cubit/image_picker_cubit.dart';
-import '../user_data/user_data_cubit.dart';
 import 'add_main_post/add_main_post_page.dart';
 import 'add_main_post/cubit/add_main_cubit.dart';
 import 'add_story/add_story_page.dart';
@@ -22,9 +20,7 @@ class AddPostPage extends StatelessWidget implements AutoRouteWrapper {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AddStoryCubit>(create: (_) => sl<AddStoryCubit>()),
-        BlocProvider<ImagePickerCubit>(create: (_) => sl<ImagePickerCubit>()),
         BlocProvider<AddMainCubit>(create: (_) => sl<AddMainCubit>()),
-        BlocProvider<UserDataCubit>(create: (_) => sl<UserDataCubit>()),
       ],
       child: this,
     );
@@ -49,9 +45,9 @@ class AddPostPage extends StatelessWidget implements AutoRouteWrapper {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            const AddMainPostPage(),
+            AddMainPostPage(),
             AddStoryPage(),
           ],
         ),

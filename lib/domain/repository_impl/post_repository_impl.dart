@@ -1,46 +1,18 @@
-import 'dart:typed_data';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:uuid/uuid.dart';
 
 import '../model/post_model.dart';
 import '../model/stories_model.dart';
 import '../repository/post_repository.dart';
+import 'firestore_repository_impl.dart';
 
 @lazySingleton
 class PostRepositoryImpl implements PostRepository {
   PostRepositoryImpl(
-    this._firestore,
-    this._storage,
-    this._firebaseAuth,
+    this._firestoreRepositoryImpl,
   );
 
-  final FirebaseFirestore _firestore;
-  final FirebaseAuth _firebaseAuth;
-  final FirebaseStorage _storage;
-
-  @override
-  Future<String> addPhotoToStorage(
-      String childName, String file, bool isPost) async {
-    Reference ref =
-        _storage.ref().child(childName).child(_firebaseAuth.currentUser!.uid);
-
-    if (isPost) {
-      String id = const Uuid().v1();
-      ref = ref.child(id);
-    }
-
-    UploadTask uploadTask = ref.putData(file as Uint8List);
-
-    TaskSnapshot taskSnapshot = await uploadTask;
-
-    String downloadUrl = await taskSnapshot.ref.getDownloadURL();
-
-    return downloadUrl;
-  }
+  final FirestoreRepositoryImpl _firestoreRepositoryImpl;
 
   @override
   Future<void> addStory(
@@ -51,7 +23,7 @@ class PostRepositoryImpl implements PostRepository {
     String? profileImage,
     String title,
   ) async {
-    String photoUrl = await addPhotoToStorage(
+    String photoUrl = await _firestoreRepositoryImpl.addPhotoToFirestore(
       'stories',
       file,
       true,
@@ -70,10 +42,10 @@ class PostRepositoryImpl implements PostRepository {
       datePublished: DateTime.now(),
     );
 
-    await _firestore
-        .collection('stories')
-        .doc(storyId)
-        .set(storiesModel.toJson());
+    _firestoreRepositoryImpl.addStoryToFirestore(
+      storyId,
+      storiesModel.toJson(),
+    );
   }
 
   @override
@@ -86,7 +58,7 @@ class PostRepositoryImpl implements PostRepository {
     String title,
     String description,
   ) async {
-    String photoUrl = await addPhotoToStorage(
+    String photoUrl = await _firestoreRepositoryImpl.addPhotoToFirestore(
       'post',
       file,
       true,
@@ -105,20 +77,6 @@ class PostRepositoryImpl implements PostRepository {
       postImage: photoUrl,
       datePublished: DateTime.now(),
     );
-    await _firestore.collection('post').doc(postId).set(postModel.toJson());
-  }
-
-  @override
-  Future<PostModel?> getPostSnapshot() async {
-    final snapshot = await _firestore
-        .collection('post')
-        .where('uid', isEqualTo: _firebaseAuth.currentUser!.uid)
-        .get();
-
-    if (snapshot.docs.isEmpty) return null;
-
-    final postModel = PostModel.fromJson(snapshot.docs.first.data());
-
-    return postModel;
+    _firestoreRepositoryImpl.addPostToFirestore(postId, postModel.toJson());
   }
 }

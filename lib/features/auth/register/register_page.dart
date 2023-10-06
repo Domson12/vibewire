@@ -8,47 +8,36 @@ import '../../../core/navigation/app_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/utils/validator.dart';
-import '../cubit/auth_cubit.dart';
 import '../../../core/common/widget/auth_logo.dart';
 import '../../../core/common/widget/auth_navigation_row.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
+import 'cubit/register_cubit.dart';
 
 @RoutePage()
 class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
-  RegisterPage({super.key});
-
-  final _formKey = GlobalKey<FormState>();
-
-  final TextEditingController _firstName = TextEditingController();
-
-  final TextEditingController _lastName = TextEditingController();
-
-  final TextEditingController _email = TextEditingController();
-
-  final TextEditingController _password = TextEditingController();
-
-  final TextEditingController _confirmPassword = TextEditingController();
+  const RegisterPage({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<AuthCubit>(),
+      create: (context) => sl<RegisterCubit>(),
       child: this,
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<RegisterCubit>();
     return Scaffold(
       backgroundColor: AppColors.primary,
       appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: BlocBuilder<AuthCubit, AuthState>(
+          child: BlocBuilder<RegisterCubit, RegisterState>(
             builder: (context, state) {
               return Form(
-                key: _formKey,
+                key: cubit.formKey,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -63,96 +52,96 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                           height: MediaQuery.of(context).size.height * 0.1,
                         ),
                         AuthFormField(
-                          controller: _firstName,
+                          controller: cubit.firstName,
                           hintText: S.of(context).name,
                           suffixIcon: const Icon(Ionicons.person),
-                          validator: (value) {
-                            return Validators.validateName(value, context);
-                          },
+                          validator: (value) => Validators.validateName(
+                            value,
+                            context,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         AuthFormField(
-                          controller: _lastName,
+                          controller: cubit.lastName,
                           hintText: S.of(context).surname,
                           suffixIcon: const Icon(Ionicons.person),
-                          validator: (value) =>
-                              Validators.validateName(value, context),
+                          validator: (value) => Validators.validateName(
+                            value,
+                            context,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         AuthFormField(
-                          controller: _email,
+                          controller: cubit.email,
                           hintText: S.of(context).email,
                           suffixIcon: const Icon(Ionicons.mail),
-                          validator: (value) =>
-                              Validators.validateEmail(value, context),
+                          validator: (value) => Validators.validateEmail(
+                            value,
+                            context,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         AuthFormField(
-                          controller: _password,
+                          controller: cubit.password,
                           hintText: S.of(context).password,
                           obscureText: state.isPasswordNotVisible,
                           suffixIcon: IconButton(
-                            onPressed: () => context
-                                .read<AuthCubit>()
-                                .togglePasswordVisibility(),
+                            onPressed: () => cubit.togglePasswordVisibility(),
                             icon: state.isPasswordNotVisible
                                 ? const Icon(Ionicons.eye_off)
                                 : const Icon(Ionicons.eye),
                           ),
-                          validator: (value) =>
-                              Validators.validatePassword(value, context),
+                          validator: (value) => Validators.validatePassword(
+                            value,
+                            context,
+                          ),
                         ),
                         const SizedBox(height: 30),
                         AuthFormField(
-                          controller: _confirmPassword,
+                          controller: cubit.confirmPassword,
                           hintText: S.of(context).confirm_password,
                           obscureText: state.isConfirmPasswordNotVisible,
                           suffixIcon: IconButton(
-                            onPressed: () {
-                              context
-                                  .read<AuthCubit>()
-                                  .toggleConfirmPasswordVisibility();
-                            },
+                            onPressed: () =>
+                                cubit.toggleConfirmPasswordVisibility(),
                             icon: state.isConfirmPasswordNotVisible
                                 ? const Icon(Ionicons.eye_off)
                                 : const Icon(Ionicons.eye),
                           ),
-                          validator: (value) =>
-                              Validators.validatePassword(value, context),
+                          validator: (value) => Validators.validatePassword(
+                            value,
+                            context,
+                          ),
                         ),
                         const SizedBox(height: 10),
                         AuthNavigationRow(
                           leftText: S.of(context).have_account,
                           rightText: S.of(context).login,
-                          onTap: () => context.router.push(
-                            LoginRoute(),
-                          ),
+                          onTap: () => context.router.push(const LoginRoute()),
                         ),
                         const SizedBox(height: 40),
                         SizedBox(
                           width: double.maxFinite,
-                          child: BlocConsumer<AuthCubit, AuthState>(
+                          child: BlocConsumer<RegisterCubit, RegisterState>(
                             listener: (context, state) {
-                              if (state.showErrorMessage == true) {
+                              if (state.isError == true) {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(state.errorMessage!),
-                                  ),
+                                  SnackBar(content: Text(state.errorMessage!)),
                                 );
                               }
                             },
                             builder: (context, state) {
                               return AppElevatedButton(
-                                foregroundColor: AppColors.black,
+                                foregroundColor: AppColors.primary,
                                 backgroundColor: AppColors.white,
                                 onPressed: () {
-                                  if (_formKey.currentState?.validate() ==
+                                  if (cubit.formKey.currentState?.validate() ==
                                       true) {
-                                    context.read<AuthCubit>().register(
-                                          email: _email.text,
-                                          password: _password.text,
-                                          firstName: _firstName.text,
-                                          lastName: _lastName.text,
+                                    context.read<RegisterCubit>().register(
+                                          email: cubit.email.text,
+                                          password: cubit.password.text,
+                                          firstName: cubit.firstName.text,
+                                          lastName: cubit.lastName.text,
                                         );
                                   }
                                 },
@@ -162,7 +151,8 @@ class RegisterPage extends StatelessWidget implements AutoRouteWrapper {
                                         S.of(context).register,
                                         style: Theme.of(context)
                                             .xTextTheme
-                                            .display0,
+                                            .h2
+                                            .copyWith(color: AppColors.primary),
                                       ),
                               );
                             },

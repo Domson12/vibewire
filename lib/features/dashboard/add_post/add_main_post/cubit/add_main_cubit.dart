@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,6 +16,10 @@ class AddMainCubit extends Cubit<AddMainState> {
   AddMainCubit(this._postRepositoryImpl) : super(const AddMainState());
 
   final PostRepositoryImpl _postRepositoryImpl;
+
+  final formKey = GlobalKey<FormState>();
+  final descriptionController = TextEditingController();
+  final titleController = TextEditingController();
 
   Future<void> addMainPost(
     String file,

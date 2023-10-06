@@ -18,7 +18,7 @@ abstract class _$AppRouter extends RootStackRouter {
     AddMainPostRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AddMainPostPage(),
+        child: WrappedRoute(child: const AddMainPostPage()),
       );
     },
     AddPostRoute.name: (routeData) {
@@ -28,11 +28,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     AddStoryRoute.name: (routeData) {
-      final args = routeData.argsAs<AddStoryRouteArgs>(
-          orElse: () => const AddStoryRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: AddStoryPage(key: args.key),
+        child: const AddStoryPage(),
       );
     },
     AuthMainRoute.name: (routeData) {
@@ -50,7 +48,7 @@ abstract class _$AppRouter extends RootStackRouter {
     AuthWrapperRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const AuthWrapperPage(),
+        child: WrappedRoute(child: const AuthWrapperPage()),
       );
     },
     DailyNewRoute.name: (routeData) {
@@ -74,7 +72,7 @@ abstract class _$AppRouter extends RootStackRouter {
     EditProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EditProfilePage(),
+        child: WrappedRoute(child: const EditProfilePage()),
       );
     },
     HomeRoute.name: (routeData) {
@@ -90,11 +88,9 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     LoginRoute.name: (routeData) {
-      final args = routeData.argsAs<LoginRouteArgs>(
-          orElse: () => const LoginRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: LoginPage(key: args.key)),
+        child: WrappedRoute(child: const LoginPage()),
       );
     },
     MessageRoute.name: (routeData) {
@@ -116,11 +112,15 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     RegisterRoute.name: (routeData) {
-      final args = routeData.argsAs<RegisterRouteArgs>(
-          orElse: () => const RegisterRouteArgs());
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: RegisterPage(key: args.key)),
+        child: WrappedRoute(child: const RegisterPage()),
+      );
+    },
+    ResetPasswordRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const ResetPasswordPage()),
       );
     },
     StreamRoute.name: (routeData) {
@@ -168,31 +168,16 @@ class AddPostRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [AddStoryPage]
-class AddStoryRoute extends PageRouteInfo<AddStoryRouteArgs> {
-  AddStoryRoute({
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
+class AddStoryRoute extends PageRouteInfo<void> {
+  const AddStoryRoute({List<PageRouteInfo>? children})
+      : super(
           AddStoryRoute.name,
-          args: AddStoryRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'AddStoryRoute';
 
-  static const PageInfo<AddStoryRouteArgs> page =
-      PageInfo<AddStoryRouteArgs>(name);
-}
-
-class AddStoryRouteArgs {
-  const AddStoryRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'AddStoryRouteArgs{key: $key}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -323,30 +308,16 @@ class LatestRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [LoginPage]
-class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
-  LoginRoute({
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute({List<PageRouteInfo>? children})
+      : super(
           LoginRoute.name,
-          args: LoginRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'LoginRoute';
 
-  static const PageInfo<LoginRouteArgs> page = PageInfo<LoginRouteArgs>(name);
-}
-
-class LoginRouteArgs {
-  const LoginRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'LoginRouteArgs{key: $key}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -393,31 +364,30 @@ class ProfileRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [RegisterPage]
-class RegisterRoute extends PageRouteInfo<RegisterRouteArgs> {
-  RegisterRoute({
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
+class RegisterRoute extends PageRouteInfo<void> {
+  const RegisterRoute({List<PageRouteInfo>? children})
+      : super(
           RegisterRoute.name,
-          args: RegisterRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'RegisterRoute';
 
-  static const PageInfo<RegisterRouteArgs> page =
-      PageInfo<RegisterRouteArgs>(name);
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
-class RegisterRouteArgs {
-  const RegisterRouteArgs({this.key});
+/// generated route for
+/// [ResetPasswordPage]
+class ResetPasswordRoute extends PageRouteInfo<void> {
+  const ResetPasswordRoute({List<PageRouteInfo>? children})
+      : super(
+          ResetPasswordRoute.name,
+          initialChildren: children,
+        );
 
-  final Key? key;
+  static const String name = 'ResetPasswordRoute';
 
-  @override
-  String toString() {
-    return 'RegisterRouteArgs{key: $key}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

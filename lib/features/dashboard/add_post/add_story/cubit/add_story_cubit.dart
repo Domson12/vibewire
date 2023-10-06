@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,7 +16,8 @@ class AddStoryCubit extends Cubit<AddStoryState> {
   AddStoryCubit(this._postRepositoryImpl) : super(const AddStoryState());
 
   final PostRepositoryImpl _postRepositoryImpl;
-
+  final formKey = GlobalKey<FormState>();
+  late final titleController = TextEditingController();
 
   Future<void> addStory(
     String file,

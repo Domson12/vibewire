@@ -51,5 +51,6 @@
   "likes": "Likes",
   "posts": "Posts",
   "save": "Save",
-  "upper_case_letter": "First letter must be uppercase"
+  "upper_case_letter": "First letter must be uppercase",
+  "bio": "Bio"
 }

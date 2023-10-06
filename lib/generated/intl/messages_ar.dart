@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إضافة حرف خاص"),
         "add_story": MessageLookupByLibrary.simpleMessage("إضافة قصة"),
         "auth_social_text": m0,
+        "bio": MessageLookupByLibrary.simpleMessage("سيرة ذاتية"),
         "camera": MessageLookupByLibrary.simpleMessage("آلة تصوير"),
         "change_locale": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
         "confirm_password":

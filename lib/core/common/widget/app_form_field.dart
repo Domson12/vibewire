@@ -8,12 +8,12 @@ class AppFormField extends StatelessWidget {
     super.key,
     required this.labelText,
     required this.controller,
-    required this.validator,
+     this.validator,
     this.prefixIcon,
     this.suffixIcon,
   });
 
-  final String? Function(String?) validator;
+  final String? Function(String?)? validator;
   final TextEditingController controller;
   final String labelText;
   final Widget? prefixIcon;

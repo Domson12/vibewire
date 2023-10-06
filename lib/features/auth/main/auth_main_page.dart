@@ -9,7 +9,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/vibe_theme_Extension.dart';
 import '../../../core/utils/injection_container.dart';
 import '../../../generated/l10n.dart';
-import '../cubit/auth_cubit.dart';
+import '../register/cubit/register_cubit.dart';
 import 'widget/main_image_grid.dart';
 
 @RoutePage()
@@ -19,7 +19,7 @@ class AuthMainPage extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<AuthCubit>(),
+      create: (context) => sl<RegisterCubit>(),
       child: this,
     );
   }
@@ -55,15 +55,15 @@ class AuthMainPage extends StatelessWidget implements AutoRouteWrapper {
                         ),
                   ),
                   const SizedBox(height: 24),
-                  BlocBuilder<AuthCubit, AuthState>(
+                  BlocBuilder<RegisterCubit, RegisterState>(
                     builder: (context, state) {
                       return AuthSocialRow(
                         text: S.of(context).login,
                         onTapFacebook: () {
-                          context.read<AuthCubit>().facebookSignIn();
+                          context.read<RegisterCubit>().facebookSignIn();
                         },
                         onTapGoogle: () {
-                          context.read<AuthCubit>().googleSignIn();
+                          context.read<RegisterCubit>().googleSignIn();
                         },
                       );
                     },
@@ -81,9 +81,9 @@ class AuthMainPage extends StatelessWidget implements AutoRouteWrapper {
                             .h2
                             .copyWith(color: AppColors.primary),
                       ),
-                      onPressed: () {
-                        context.router.push(RegisterRoute());
-                      },
+                      onPressed: () => context.router.push(
+                        const RegisterRoute(),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -99,9 +99,7 @@ class AuthMainPage extends StatelessWidget implements AutoRouteWrapper {
                             .h2
                             .copyWith(color: AppColors.primary),
                       ),
-                      onPressed: () {
-                        context.router.push(LoginRoute());
-                      },
+                      onPressed: () => context.router.push(const LoginRoute()),
                     ),
                   ),
                 ],

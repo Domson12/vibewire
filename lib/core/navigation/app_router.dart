@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import '../../features/auth/auth_page.dart';
 import '../../features/auth/auth_wrapper_page.dart';
 import '../../features/auth/login/login_page.dart';
 import '../../features/auth/main/auth_main_page.dart';
 import '../../features/auth/register/register_page.dart';
+import '../../features/auth/reset_password/reset_password_page.dart';
 import '../../features/dashboard/add_post/add_main_post/add_main_post_page.dart';
 import '../../features/dashboard/add_post/add_post_page.dart';
 import '../../features/dashboard/add_post/add_story/add_story_page.dart';
@@ -39,6 +39,7 @@ class AppRouter extends _$AppRouter {
                 AutoRoute(page: AuthMainRoute.page, initial: true),
                 AutoRoute(page: RegisterRoute.page),
                 AutoRoute(page: LoginRoute.page),
+                AutoRoute(page: ResetPasswordRoute.page),
               ],
             ),
             AutoRoute(

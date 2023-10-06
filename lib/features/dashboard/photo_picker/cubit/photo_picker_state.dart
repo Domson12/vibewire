@@ -1,12 +1,12 @@
-part of 'image_picker_cubit.dart';
+part of 'photo_picker_cubit.dart';
 
 @freezed
-class ImagePickerState with _$ImagePickerState {
-  const factory ImagePickerState({
+class PhotoPickerState with _$PhotoPickerState {
+  const factory PhotoPickerState({
     Uint8List? imageBytes,
     @Default(false) bool isPhotoSelected,
     @Default(false) bool isLoading,
     @Default(false) bool isError,
     @Default('') String errorMessage,
-  }) = _ImagePickerState;
+  }) = _PhotoPickerState;
 }

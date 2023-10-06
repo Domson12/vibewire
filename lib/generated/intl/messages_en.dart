@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add special characters"),
         "add_story": MessageLookupByLibrary.simpleMessage("Add Story"),
         "auth_social_text": m0,
+        "bio": MessageLookupByLibrary.simpleMessage("Bio"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "change_locale": MessageLookupByLibrary.simpleMessage("Change Locale"),
         "confirm_password":

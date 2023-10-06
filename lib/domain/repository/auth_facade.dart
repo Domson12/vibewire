@@ -11,18 +11,9 @@ abstract class IAuthFacade {
 
   Future<void> googleSignIn();
 
+  Future<void> resetPassword({required String email});
+
   Future<void> facebookSignIn();
-
-  Future<void> addComment(
-    String uid,
-    String firstName,
-    String lastName,
-    String? profileImage,
-    String postId,
-    String comment,
-  );
-
-  Future<UserModel?> getUserData();
 
   String? getUid();
 

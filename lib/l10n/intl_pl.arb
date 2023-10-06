@@ -52,5 +52,6 @@
   "likes": "Polubienia",
   "posts": "Posty",
   "save": "Zapisz",
-  "upper_case_letter": "Pierwsza litera musi być duża"
+  "upper_case_letter": "Pierwsza litera musi być duża",
+  "bio": "Bio"
 }
